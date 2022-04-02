@@ -23,7 +23,6 @@ public class HardwareCommand {
     private Double price;
 
     @NotNull(message = "Type is required")
-//    TODO: add enum validation
     private HardwareType type;
 
     @NotNull(message = "Available count is required")

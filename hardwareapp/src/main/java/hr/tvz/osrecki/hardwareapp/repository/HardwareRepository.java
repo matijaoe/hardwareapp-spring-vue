@@ -13,7 +13,7 @@ public interface HardwareRepository {
 
     Optional<Hardware> save(Hardware hardware);
 
-    Optional<Hardware> update(Hardware hardware);
+    Optional<Hardware> update(String code, Hardware updatedHardware);
 
     void deleteByCode(String code);
 }

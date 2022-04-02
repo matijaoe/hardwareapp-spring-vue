@@ -22,7 +22,6 @@ public class MockHardwareRepository implements HardwareRepository {
         return MOCK_HARDWARE;
     }
 
-
     @Override
     public Optional<Hardware> findByCode(final String code) {
         return MOCK_HARDWARE.stream().filter(item -> Objects.equals(item.getCode(), code)).findAny();
@@ -30,7 +29,6 @@ public class MockHardwareRepository implements HardwareRepository {
 
     @Override
     public Optional<Hardware> save(final Hardware hardware) {
-//        TODO: duplicate error handling response
         if (!MOCK_HARDWARE.contains(hardware)) {
             MOCK_HARDWARE.add(hardware);
             return Optional.of(hardware);
@@ -38,9 +36,17 @@ public class MockHardwareRepository implements HardwareRepository {
         return Optional.empty();
     }
 
-
     @Override
-    public Optional<Hardware> update(final Hardware hardware) {
+    public Optional<Hardware> update(final String code, final Hardware updatedHardware) {
+        boolean exists = MOCK_HARDWARE.removeIf(
+                item -> Objects.equals(item.getCode(), code) &&
+                        Objects.equals(item.getCode(), updatedHardware.getCode())
+        );
+
+        if (exists) {
+            MOCK_HARDWARE.add(updatedHardware);
+            return Optional.of(updatedHardware);
+        }
         return Optional.empty();
     }
 
