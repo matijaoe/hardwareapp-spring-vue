@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,8 +22,8 @@ public class HardwareServiceImpl implements HardwareService {
     }
 
     @Override
-    public HardwareDTO findByCode(String code) {
-        return hardwareRepository.findByCode(code).map(this::mapHardwareToDTO).orElse(null);
+    public Optional<HardwareDTO> findByCode(String code) {
+        return hardwareRepository.findByCode(code).map(this::mapHardwareToDTO);
     }
 
     private HardwareDTO mapHardwareToDTO(Hardware hardware) {

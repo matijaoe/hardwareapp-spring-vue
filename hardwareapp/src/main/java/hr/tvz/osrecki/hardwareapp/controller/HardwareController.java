@@ -24,7 +24,9 @@ public class HardwareController {
     }
 
     @GetMapping("{code}")
-    public HardwareDTO getHardware(@PathVariable String code) {
-        return hardwareService.findByCode(code);
+    public ResponseEntity<HardwareDTO> getHardware(@PathVariable String code) {
+        return hardwareService.findByCode(code)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
