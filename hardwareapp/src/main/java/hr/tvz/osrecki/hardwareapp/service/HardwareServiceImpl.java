@@ -2,6 +2,7 @@ package hr.tvz.osrecki.hardwareapp.service;
 
 import hr.tvz.osrecki.hardwareapp.dto.HardwareDTO;
 import hr.tvz.osrecki.hardwareapp.model.Hardware;
+import hr.tvz.osrecki.hardwareapp.model.HardwareType;
 import hr.tvz.osrecki.hardwareapp.repository.HardwareRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,11 @@ public class HardwareServiceImpl implements HardwareService {
 
     @Override
     public Optional<HardwareDTO> findByCode(String code) {
-        return hardwareRepository.findByCode(code).map(this::mapHardwareToDTO);
+        Optional<Hardware> hardware = hardwareRepository.findByCode(code);
+        if (hardware.isPresent() && hardware.get().getType().equals(HardwareType.GPU) && hardware.get().getAvailableCount() < 3) {
+            return Optional.of(new HardwareDTO(hardware.get().getName(), hardware.get().getPrice() * 2));
+        }
+        return Optional.of(mapHardwareToDTO(hardware.get()));
     }
 
     private HardwareDTO mapHardwareToDTO(Hardware hardware) {
