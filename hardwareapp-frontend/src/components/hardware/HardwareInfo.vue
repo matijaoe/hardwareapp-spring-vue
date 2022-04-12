@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { HardwareDTO } from "@/models/hardware";
+import { formatNumber } from "@/utils";
 import { PhTag } from "phosphor-vue";
 
 type Props = {
@@ -10,9 +11,11 @@ type Emits = {
   (e: "close"): void;
 };
 
-defineProps<Props>();
+const props = defineProps<Props>();
 
 const emit = defineEmits<Emits>();
+
+const formattedPrice = computed(() => formatNumber(props.item.price));
 </script>
 
 <template>
@@ -29,7 +32,7 @@ const emit = defineEmits<Emits>();
       >
         <div flex="~" items="center">
           <span text="primary ">$</span>
-          <p font="mono">{{ item.price }}</p>
+          <p font="mono">{{ formattedPrice }}</p>
         </div>
         <ph-tag text="primary" weight="duotone" />
       </div>

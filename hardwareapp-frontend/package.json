@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.2.5",
+    "dayjs": "^1.11.0",
     "phosphor-vue": "^4.4.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
