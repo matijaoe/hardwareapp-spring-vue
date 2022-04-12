@@ -16,7 +16,7 @@ const emit = defineEmits<Emits>();
 </script>
 
 <template>
-  <ul class="flex flex-col gap-2">
+  <ul flex="~ col gap-2">
     <HardwareListItem
       v-for="item in items"
       :key="item.code"

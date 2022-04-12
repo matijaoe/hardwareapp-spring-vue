@@ -1,5 +1,6 @@
 import {
   defineConfig,
+  presetAttributify,
   presetUno,
   // transformerDirectives,
   // transformerVariantGroup,
@@ -7,14 +8,17 @@ import {
 
 export default defineConfig({
   shortcuts: [],
-  presets: [presetUno()],
+  presets: [presetUno(), presetAttributify({})],
   theme: {
-    extend: {
-      colors: {
-        kajgod: {
-          500: "#63e2b7",
-        },
+    colors: {
+      primary: "#63e2b7",
+      background: {
+        dark: "#101014",
       },
+    },
+    fontFamily: {
+      sans: ["Ubuntu", "ui-system"],
+      mono: ["Roboto Mono", "ui-mono"],
     },
   },
 });

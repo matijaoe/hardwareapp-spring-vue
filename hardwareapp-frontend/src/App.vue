@@ -4,7 +4,9 @@ import { darkTheme } from "naive-ui";
 
 <template>
   <NConfigProvider :theme="darkTheme">
-    <div class="bg-[#101014] text-light-900 w-screen min-h-screen p-8">
+    <div
+      class="bg-background-dark text-light-900 w-screen min-h-screen p-8 font-sans"
+    >
       <main class="mx-auto max-w-7xl">
         <RouterView />
       </main>

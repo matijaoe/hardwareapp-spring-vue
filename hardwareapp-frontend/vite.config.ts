@@ -1,11 +1,13 @@
 import { fileURLToPath, URL } from "url";
 
-import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import Unocss from "unocss/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
+import Components from "unplugin-vue-components/vite";
+import { defineConfig } from "vite";
+import ViteFonts from "vite-plugin-fonts";
+import presetAttributify from "@unocss/preset-attributify";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +16,11 @@ export default defineConfig({
     AutoImport({
       imports: ["vue", "pinia", "@vueuse/core"],
       dts: true,
+    }),
+    ViteFonts({
+      google: {
+        families: ["Ubuntu", "Roboto Mono"],
+      },
     }),
     Components({
       resolvers: [NaiveUiResolver()],

@@ -17,20 +17,21 @@ const clearSelectedHardware = () => set(selectedHardware, null);
 
 <template>
   <div>
-    <div class="lg:mt-10">
-      <n-h1 prefix="bar" type="success" class="mb-8">
+    <div m="lg:t-10">
+      <n-h1 prefix="bar" type="success" mb="8">
         <n-text>Available hardware</n-text>
       </n-h1>
-      <div class="flex flex-col-reverse lg:flex-row gap-2 lg:gap-12">
+      <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
         <HardwareList
-          class="w-full lg:max-w-100"
+          w="full"
+          max-w="lg:100"
           :items="store.hardware"
           :selected-item="selectedHardware"
           @select="setSelectedHardware"
         />
         <HardwareInfo
           v-if="selectedHardware"
-          class="flex-1"
+          flex="1"
           :item="selectedHardware"
           @close="clearSelectedHardware"
         />

@@ -11,20 +11,21 @@ defineProps<Props>();
 </script>
 
 <template>
-  <li class="cursor-pointer">
+  <li cursor="pointer">
     <NCard
       hoverable
       size="medium"
-      class="hover:border-[#63e2b7] group"
-      :class="[{ '!border-[#63e2b7] bg-[#63e2b7]/10': selected }]"
+      border="hover:primary"
+      :class="[{ '!border-primary bg-primary/10': selected }]"
     >
-      <div class="flex gap-6 items-center">
-        <PhDesktopTower
+      <div flex="~ gap-6" items="center">
+        <ph-desktop-tower
           :size="42"
-          class="text-[#63e2b7] flex-shrink-0"
+          text="primary"
+          flex="shrink-0"
           weight="duotone"
         />
-        <h4 class="text-lg">{{ item.name }}</h4>
+        <h4 text="lg">{{ item.name }}</h4>
       </div>
     </NCard>
   </li>
