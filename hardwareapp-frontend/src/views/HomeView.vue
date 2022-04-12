@@ -16,28 +16,26 @@ const clearSelectedHardware = () => set(selectedHardware, null);
 </script>
 
 <template>
-  <div>
-    <div m="lg:t-10">
-      <n-h1 prefix="bar" type="success" mb="8">
-        <n-text>Available hardware</n-text>
-      </n-h1>
-      <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
-        <HardwareList
-          w="full"
-          max-w="lg:100"
-          :items="store.hardware"
-          :selected-item="selectedHardware"
-          @select="setSelectedHardware"
+  <div m="lg:t-10">
+    <NH1 prefix="bar" type="success" mb="8">
+      <NText>Available hardware</NText>
+    </NH1>
+    <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
+      <HardwareList
+        w="full"
+        max-w="lg:100"
+        :items="store.hardware"
+        :selected-item="selectedHardware"
+        @select="setSelectedHardware"
+      />
+      <TheTransition name="fade-slide">
+        <HardwareInfo
+          v-if="selectedHardware"
+          flex="1"
+          :item="selectedHardware"
+          @close="clearSelectedHardware"
         />
-        <TheTransition name="fade-slide">
-          <HardwareInfo
-            v-if="selectedHardware"
-            flex="1"
-            :item="selectedHardware"
-            @close="clearSelectedHardware"
-          />
-        </TheTransition>
-      </div>
+      </TheTransition>
     </div>
   </div>
 </template>
