@@ -21,5 +21,6 @@ import { darkTheme } from "naive-ui";
 </template>
 
 <style>
-@import "@/assets/base.css";
+@import "@/assets/reset.scss";
+@import "@/assets/base.scss";
 </style>

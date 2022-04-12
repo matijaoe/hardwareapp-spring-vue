@@ -8,7 +8,7 @@ import {
 
 export default defineConfig({
   shortcuts: [],
-  presets: [presetUno(), presetAttributify({})],
+  presets: [presetUno({}), presetAttributify({})],
   theme: {
     colors: {
       primary: "#63e2b7",

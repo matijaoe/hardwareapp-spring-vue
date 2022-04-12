@@ -42,3 +42,6 @@ export const useHardwareStore = defineStore("hardware", () => {
     getHardwareByCode,
   };
 });
+
+if (import.meta.hot)
+  import.meta.hot.accept(acceptHMRUpdate(useHardwareStore, import.meta.hot));
