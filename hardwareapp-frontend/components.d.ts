@@ -4,6 +4,8 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    FadeSlideTransition: typeof import('./src/components/transition/FadeSlideTransition.vue')['default']
+    FadeTransition: typeof import('./src/components/transition/FadeTransition.vue')['default']
     HardwareInfo: typeof import('./src/components/hardware/HardwareInfo.vue')['default']
     HardwareItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']
     HardwareList: typeof import('./src/components/hardware/HardwareList.vue')['default']
@@ -17,6 +19,7 @@ declare module '@vue/runtime-core' {
     NText: typeof import('naive-ui')['NText']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheTransition: typeof import('./src/components/transition/TheTransition.vue')['default']
   }
 }
 

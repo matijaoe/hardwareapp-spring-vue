@@ -5,9 +5,15 @@ import { darkTheme } from "naive-ui";
 <template>
   <NConfigProvider :theme="darkTheme">
     <div
-      class="bg-background-dark text-light-900 w-screen min-h-screen p-8 font-sans"
+      bg="background-dark"
+      font="sans"
+      text="light-900"
+      w="screen"
+      min-h="screen"
+      px="4 md:6 lg:8"
+      py="6 lg:8"
     >
-      <main class="mx-auto max-w-7xl">
+      <main mx="auto" max-w="7xl">
         <RouterView />
       </main>
     </div>

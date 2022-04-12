@@ -18,18 +18,20 @@ const emit = defineEmits<Emits>();
 <template>
   <NCard closable @close="emit('close')" size="huge">
     <template #header>
-      <p text="lg dark-50" font="mono">{{ item.code }}</p>
+      <p text="md md:lg dark-50" font="mono">{{ item.code }}</p>
     </template>
     <div h="full" flex="~ col gap-6" justify="between">
-      <h2 text="3xl lg:4xl light-900">
+      <h2 text="xl lg:3xl lg:4xl light-900">
         {{ item.name }}
       </h2>
-      <div class="ml-auto text-4xl lg:text-5xl flex items-center gap-4">
+      <div
+        class="ml-auto text-3xl lg:text-5xl flex items-center gap-2 lg:gap-4"
+      >
         <div flex="~" items="center">
           <span text="primary ">$</span>
           <p font="mono">{{ item.price }}</p>
         </div>
-        <ph-tag :size="42" text="primary" weight="duotone" />
+        <ph-tag text="primary" weight="duotone" />
       </div>
     </div>
   </NCard>

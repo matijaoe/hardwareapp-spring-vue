@@ -29,12 +29,14 @@ const clearSelectedHardware = () => set(selectedHardware, null);
           :selected-item="selectedHardware"
           @select="setSelectedHardware"
         />
-        <HardwareInfo
-          v-if="selectedHardware"
-          flex="1"
-          :item="selectedHardware"
-          @close="clearSelectedHardware"
-        />
+        <TheTransition name="fade-slide">
+          <HardwareInfo
+            v-if="selectedHardware"
+            flex="1"
+            :item="selectedHardware"
+            @close="clearSelectedHardware"
+          />
+        </TheTransition>
       </div>
     </div>
   </div>
