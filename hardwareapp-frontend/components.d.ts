@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     HardwareItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']
     HardwareList: typeof import('./src/components/hardware/HardwareList.vue')['default']
     HardwareListItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']
+    HardwarePriceMessage: typeof import('./src/components/hardware/HardwarePriceMessage.vue')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
     NButton: typeof import('naive-ui')['NButton']
     NCard: typeof import('naive-ui')['NCard']

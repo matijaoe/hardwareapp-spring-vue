@@ -18,7 +18,14 @@ const clearSelectedHardware = () => set(selectedHardware, null);
 <template>
   <div m="lg:t-10">
     <NH1 prefix="bar" type="success" mb="8">
-      <NText>Available hardware</NText>
+      <div class="flex justify-between">
+        <NText>Available hardware</NText>
+        <HardwarePriceMessage
+          class="text-primary"
+          v-if="selectedHardware"
+          :price="selectedHardware.price"
+        />
+      </div>
     </NH1>
     <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
       <HardwareList
@@ -28,6 +35,7 @@ const clearSelectedHardware = () => set(selectedHardware, null);
         :selected-item="selectedHardware"
         @select="setSelectedHardware"
       />
+
       <TheTransition name="fade-slide">
         <HardwareInfo
           v-if="selectedHardware"
