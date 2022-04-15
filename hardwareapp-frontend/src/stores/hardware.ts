@@ -1,5 +1,5 @@
 import type { HardwareDTO } from "@/models/hardware";
-import * as hardwareService from "@/services/hardware";
+import { getAllHardware, getHardwareByCode } from "@/services/hardware";
 import { set } from "@vueuse/core";
 
 export const useHardwareStore = defineStore("hardware", () => {
@@ -7,14 +7,12 @@ export const useHardwareStore = defineStore("hardware", () => {
 
   const fetchHardware = async () => {
     try {
-      const hardwareRes = await hardwareService.getAllHardware();
-
-      if (!hardwareRes || (hardwareRes && "error" in hardwareRes)) {
-        throw new Error("Error fetching hardware");
+      const data = await getAllHardware();
+      if (data) {
+        set(hardware, data);
+        return hardware;
       }
-
-      set(hardware, hardwareRes);
-      return hardware;
+      return null;
     } catch (err: any) {
       console.error(err.message, err);
       return null;
@@ -23,21 +21,18 @@ export const useHardwareStore = defineStore("hardware", () => {
 
   const fetchHardwareByCode = async (code: string) => {
     try {
-      const hardwareRes = await hardwareService.getHardwareByCode(code);
-      console.log("hardwareRes :>> ", hardwareRes);
-
-      if (!hardwareRes || (hardwareRes && "error" in hardwareRes)) {
-        throw new Error("Error fetching hardware");
+      const data = await getHardwareByCode(code);
+      if (data) {
+        return hardware;
       }
-
-      return hardware;
+      return null;
     } catch (err: any) {
       console.error(err.message, err);
       return null;
     }
   };
 
-  const getHardwareByCode = (code: string) =>
+  const getStoredHardware = (code: string) =>
     hardware.value?.find((h) => h.code === code) || null;
 
   return {
@@ -45,6 +40,7 @@ export const useHardwareStore = defineStore("hardware", () => {
     fetchHardware,
     fetchHardwareByCode,
     getHardwareByCode,
+    getStoredHardware,
   };
 });
 

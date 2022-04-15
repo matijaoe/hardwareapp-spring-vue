@@ -1,6 +1,3 @@
-export const handleError = (err: any) => {
-  console.error("Error fetching data", err);
-  return null;
-};
+import type { AxiosResponse } from "axios";
 
-export const parseData = (res: Response) => res.json();
+export const parseData = <T>(response: AxiosResponse<T>) => response.data;

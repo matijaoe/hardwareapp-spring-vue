@@ -4,10 +4,9 @@ import { useHardwareStore } from "@/stores/hardware";
 import { set } from "@vueuse/core";
 
 const store = useHardwareStore();
+const selectedHardware = ref<HardwareDTO | null>(null);
 
 store.fetchHardware();
-
-const selectedHardware = ref<HardwareDTO | null>(null);
 
 const setSelectedHardware = (code: string) => {
   const hardware = store.getHardwareByCode(code);

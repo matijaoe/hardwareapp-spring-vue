@@ -1,11 +1,9 @@
-import type { Result } from "@/models/api";
-import type { Hardware, HardwareDTO } from "@/models/hardware";
-import { handleError, parseData } from ".";
+import type { HardwareDTO } from "@/models/hardware";
+import { parseData } from ".";
+import http from "./http";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+export const getAllHardware = () =>
+  http.get<HardwareDTO[]>("/hardware").then(parseData);
 
-export const getAllHardware = (): Result<HardwareDTO[]> =>
-  fetch(`${BASE_URL}/hardware`).then(parseData).catch(handleError);
-
-export const getHardwareByCode = (code: string): Result<Hardware> =>
-  fetch(`${BASE_URL}/hardware/${code}`).then(parseData).catch(handleError);
+export const getHardwareByCode = (code: string) =>
+  http.get<HardwareDTO>(`/hardware/${code}`).then(parseData);

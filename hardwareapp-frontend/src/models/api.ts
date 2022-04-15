@@ -5,5 +5,3 @@ export type GenericError = Record<string, any> & {
   message?: string;
   path?: string;
 };
-
-export type Result<T> = Promise<T> | GenericError;
