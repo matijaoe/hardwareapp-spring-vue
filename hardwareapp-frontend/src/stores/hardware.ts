@@ -1,5 +1,5 @@
 import type { HardwareDTO } from "@/models/hardware";
-import { getAllHardware, getHardwareByCode } from "@/services/hardware";
+import { getAllHardware } from "@/services/hardware";
 import { set } from "@vueuse/core";
 
 export const useHardwareStore = defineStore("hardware", () => {
@@ -19,28 +19,9 @@ export const useHardwareStore = defineStore("hardware", () => {
     }
   };
 
-  const fetchHardwareByCode = async (code: string) => {
-    try {
-      const data = await getHardwareByCode(code);
-      if (data) {
-        return data;
-      }
-      return null;
-    } catch (err: any) {
-      console.error(err.message, err);
-      return null;
-    }
-  };
-
-  const getStoredHardware = (code: string) =>
-    hardware.value?.find((h) => h.code === code) || null;
-
   return {
     hardware,
     fetchHardware,
-    fetchHardwareByCode,
-    getHardwareByCode,
-    getStoredHardware,
   };
 });
 

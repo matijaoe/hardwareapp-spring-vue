@@ -7,19 +7,13 @@ type Props = {
   item: HardwareDTO;
 };
 
-type Emits = {
-  (e: "close"): void;
-};
-
 const props = defineProps<Props>();
-
-const emit = defineEmits<Emits>();
 
 const formattedPrice = computed(() => formatNumber(props.item.price));
 </script>
 
 <template>
-  <NCard closable @close="emit('close')" size="huge">
+  <NCard size="huge">
     <template #header>
       <p text="md md:lg dark-50" font="mono">{{ item.code }}</p>
     </template>

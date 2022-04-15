@@ -7,3 +7,6 @@ export const getAllHardware = () =>
 
 export const getHardwareByCode = (code: string) =>
   http.get<HardwareDTO>(`/hardware/${code}`).then(parseData);
+
+export const deleteHardware = (code: string) =>
+  http.delete<HardwareDTO>(`/hardware/${code}`).then(parseData);

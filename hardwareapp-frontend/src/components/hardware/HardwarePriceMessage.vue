@@ -6,8 +6,8 @@ type Props = {
   price: number;
 };
 
+// TODO: extract to composable
 const vars = useThemeVars();
-console.log("vars :>> ", vars.value);
 
 const props = defineProps<Props>();
 
