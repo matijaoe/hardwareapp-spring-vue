@@ -32,17 +32,13 @@ const clearSelectedHardware = () => set(selectedHardware, null);
       />
 
       <TheTransition name="fade-slide">
-        <div class="flex flex-col w-full gap-2">
+        <div class="flex flex-col w-full gap-2" v-if="selectedHardware">
           <HardwareDetails
-            v-if="selectedHardware"
             :item="selectedHardware"
             @close="clearSelectedHardware"
             flex="1"
           />
-          <HardwarePriceMessage
-            v-if="selectedHardware"
-            :price="selectedHardware.price"
-          />
+          <HardwarePriceMessage :price="selectedHardware.price" />
         </div>
       </TheTransition>
     </div>
