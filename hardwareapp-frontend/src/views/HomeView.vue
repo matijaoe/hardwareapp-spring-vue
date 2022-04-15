@@ -5,6 +5,8 @@ import { set } from "@vueuse/core";
 
 const store = useHardwareStore();
 
+store.fetchHardware();
+
 const selectedHardware = ref<HardwareDTO | null>(null);
 
 const setSelectedHardware = (code: string) => {
@@ -18,9 +20,7 @@ const clearSelectedHardware = () => set(selectedHardware, null);
 <template>
   <div m="lg:t-10">
     <NH1 prefix="bar" type="success" mb="8">
-      <div class="flex justify-between">
-        <NText>Available hardware</NText>
-      </div>
+      <NText>Available hardware</NText>
     </NH1>
     <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
       <HardwareList
@@ -32,11 +32,11 @@ const clearSelectedHardware = () => set(selectedHardware, null);
       />
 
       <TheTransition name="fade-slide">
-        <div class="flex flex-col w-full gap-2" v-if="selectedHardware">
+        <div flex="~ col gap-2" w="full" v-if="selectedHardware">
           <HardwareDetails
+            flex="1"
             :item="selectedHardware"
             @close="clearSelectedHardware"
-            flex="1"
           />
           <HardwarePriceMessage :price="selectedHardware.price" />
         </div>

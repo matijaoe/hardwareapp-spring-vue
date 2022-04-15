@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("hardware")
+@CrossOrigin(origins = "http://localhost:4000")
 public class HardwareController {
 
     private final HardwareService hardwareService;

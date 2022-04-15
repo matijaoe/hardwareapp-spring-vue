@@ -8,4 +8,5 @@ import lombok.Data;
 public class HardwareDTO {
     private String name;
     private Double price;
+    private String code;
 }
