@@ -70,7 +70,7 @@ watchEffect(async () => {
         description="Gone but not forgotten"
       >
         <template #footer>
-          <n-button @click="gotoHardware"> Find something else</n-button>
+          <n-button @click="gotoHardware">Find something else</n-button>
         </template>
       </n-result>
     </div>

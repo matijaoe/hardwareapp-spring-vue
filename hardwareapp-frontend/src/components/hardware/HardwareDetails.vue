@@ -22,7 +22,6 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
         <h2 text="xl lg:3xl lg:4xl light-900">
           {{ item.name }}
         </h2>
-        <p></p>
       </div>
       <div
         class="ml-auto text-3xl lg:text-4xl flex items-center gap-2 lg:gap-3"

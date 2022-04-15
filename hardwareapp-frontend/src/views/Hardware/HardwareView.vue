@@ -7,12 +7,12 @@ store.fetchHardware();
 </script>
 
 <template>
-  <div>
+  <div flex="1 ~ col" h="full">
     <NH1 prefix="bar" type="success" mb="8">
       <NText>Available hardware</NText>
     </NH1>
-    <div flex="~ col-reverse lg:row gap-2 lg:gap-12">
-      <HardwareList w="full" max-w="lg:100" :items="store.hardware" />
+    <div flex="1 ~ col-reverse lg:row gap-2 lg:gap-12">
+      <HardwareList w="full" flex="1" max-w="lg:100" :items="store.hardware" />
     </div>
   </div>
 </template>

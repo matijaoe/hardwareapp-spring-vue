@@ -15,7 +15,7 @@ const { deleteItem, loading } = useItemDelete();
 
 <template>
   <NSpin :show="loading">
-    <li cursor="pointer" class="group" ref="itemEl">
+    <li cursor="pointer" class="group">
       <NCard
         hoverable
         size="medium"
