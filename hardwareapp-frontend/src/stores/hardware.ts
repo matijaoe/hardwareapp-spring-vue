@@ -10,7 +10,7 @@ export const useHardwareStore = defineStore("hardware", () => {
       const data = await getAllHardware();
       if (data) {
         set(hardware, data);
-        return hardware;
+        return hardware.value;
       }
       return null;
     } catch (err: any) {
@@ -23,7 +23,7 @@ export const useHardwareStore = defineStore("hardware", () => {
     try {
       const data = await getHardwareByCode(code);
       if (data) {
-        return hardware;
+        return data;
       }
       return null;
     } catch (err: any) {

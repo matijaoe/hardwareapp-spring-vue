@@ -23,7 +23,7 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
     <template #header>
       <p text="md md:lg dark-50" font="mono">{{ item.code }}</p>
     </template>
-    <div h="full" flex="~ col gap-8" justify="between" mt="-3 lg:-2">
+    <div h="full" flex="~ col gap-24" justify="between" mt="-3 lg:-2">
       <div>
         <h2 text="xl lg:3xl lg:4xl light-900">
           {{ item.name }}
@@ -31,9 +31,9 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
         <p></p>
       </div>
       <div
-        class="ml-auto text-3xl lg:text-5xl flex items-center gap-2 lg:gap-4"
+        class="ml-auto text-3xl lg:text-4xl flex items-center gap-2 lg:gap-3"
       >
-        <div flex="~" items="center">
+        <div flex="~ gap-1" items="center">
           <span text="primary ">$</span>
           <p font="mono">{{ formattedPrice }}</p>
         </div>

@@ -1,7 +1,13 @@
 <script setup lang="ts">
+import { useThemeVars } from "naive-ui";
+import { PhInfo } from "phosphor-vue";
+
 type Props = {
   price: number;
 };
+
+const vars = useThemeVars();
+console.log("vars :>> ", vars.value);
 
 const props = defineProps<Props>();
 
@@ -21,9 +27,14 @@ const message = computed(() => {
 </script>
 
 <template>
-  <NCard size="huge">
-    <p text="lg">{{ message }}</p>
-  </NCard>
+  <n-alert title="Obročna uplata" type="info" h="full">
+    <template #icon>
+      <n-icon>
+        <PhInfo :color="vars.infoColor" weight="fill" />
+      </n-icon>
+    </template>
+    {{ message }}
+  </n-alert>
 </template>
 
 <style lang="scss" scoped></style>

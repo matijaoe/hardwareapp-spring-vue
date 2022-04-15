@@ -1,6 +1,6 @@
 import HomeView from "@/views/HomeView.vue";
 import HardwareView from "@/views/Hardware/HardwareView.vue";
-import HardwareItemView from "@/views/Hardware/HardwareView.vue";
+import HardwareItemView from "@/views/Hardware/HardwareItemView.vue";
 
 const routes = [
   {
@@ -14,7 +14,7 @@ const routes = [
     component: HardwareView,
   },
   {
-    path: "/details/:code",
+    path: "/hardware/details/:code",
     name: "HardwareItem",
     component: HardwareItemView,
   },

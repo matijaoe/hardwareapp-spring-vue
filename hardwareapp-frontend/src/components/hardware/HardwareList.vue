@@ -5,13 +5,15 @@ type Props = {
   items: HardwareDTO[];
 };
 
-type Emits = {
-  (e: "select", item: HardwareDTO): void;
-};
-
 defineProps<Props>();
 
-const emit = defineEmits<Emits>();
+const router = useRouter();
+
+const gotoHardwareItem = ({ code }: HardwareDTO) =>
+  router.push({
+    name: "HardwareItem",
+    params: { code },
+  });
 </script>
 
 <template>
@@ -20,7 +22,7 @@ const emit = defineEmits<Emits>();
       v-for="item in items"
       :key="item.code"
       :item="item"
-      @click="emit('select', item)"
+      @click="gotoHardwareItem(item)"
     />
   </ul>
 </template>
