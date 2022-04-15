@@ -6,7 +6,8 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     FadeSlideTransition: typeof import('./src/components/transition/FadeSlideTransition.vue')['default']
     FadeTransition: typeof import('./src/components/transition/FadeTransition.vue')['default']
-    HardwareInfo: typeof import('./src/components/hardware/HardwareInfo.vue')['default']
+    HardwareDetails: typeof import('./src/components/hardware/HardwareDetails.vue')['default']
+    HardwareInfo: typeof import('./src/components/hardware/HardwareDetails.vue')['default']
     HardwareItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']
     HardwareList: typeof import('./src/components/hardware/HardwareList.vue')['default']
     HardwareListItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']

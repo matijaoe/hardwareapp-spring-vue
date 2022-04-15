@@ -21,9 +21,9 @@ const message = computed(() => {
 </script>
 
 <template>
-  <div>
-    <p>{{ message }}</p>
-  </div>
+  <NCard size="huge">
+    <p text="lg">{{ message }}</p>
+  </NCard>
 </template>
 
 <style lang="scss" scoped></style>
