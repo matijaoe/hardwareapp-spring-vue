@@ -1,5 +1,6 @@
 import type { HardwareDTO } from "@/models/hardware";
 import { getAllHardware } from "@/services/hardware";
+import { shuffleArray } from "@/utils";
 import { set } from "@vueuse/core";
 
 export const useHardwareStore = defineStore("hardware", () => {
@@ -19,9 +20,12 @@ export const useHardwareStore = defineStore("hardware", () => {
     }
   };
 
+  const shuffleHardware = () => shuffleArray(hardware.value);
+
   return {
     hardware,
     fetchHardware,
+    shuffleHardware,
   };
 });
 
