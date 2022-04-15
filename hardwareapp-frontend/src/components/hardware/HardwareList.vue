@@ -3,11 +3,10 @@ import type { HardwareDTO } from "@/models/hardware";
 
 type Props = {
   items: HardwareDTO[];
-  selectedItem: HardwareDTO | null;
 };
 
 type Emits = {
-  (e: "select", code: string): void;
+  (e: "select", item: HardwareDTO): void;
 };
 
 defineProps<Props>();
@@ -16,13 +15,12 @@ const emit = defineEmits<Emits>();
 </script>
 
 <template>
-  <ul flex="~ col gap-2" max-h="75vh" pr="2" overflow="auto">
+  <ul flex="~ col gap-2" max-h="lg:75vh" pr="2" overflow="auto">
     <HardwareListItem
       v-for="item in items"
       :key="item.code"
       :item="item"
-      :selected="selectedItem?.code === item.code"
-      @click="emit('select', item.code)"
+      @click="emit('select', item)"
     />
   </ul>
 </template>

@@ -4,6 +4,7 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppNav: typeof import('./src/components/nav/AppNav.vue')['default']
     FadeSlideTransition: typeof import('./src/components/transition/FadeSlideTransition.vue')['default']
     FadeTransition: typeof import('./src/components/transition/FadeTransition.vue')['default']
     HardwareDetails: typeof import('./src/components/hardware/HardwareDetails.vue')['default']

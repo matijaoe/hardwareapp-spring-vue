@@ -5,17 +5,25 @@ import { darkTheme } from "naive-ui";
 <template>
   <NConfigProvider :theme="darkTheme">
     <div
+      min-h="screen"
       bg="background-dark"
       font="sans"
       text="light-900"
-      w="screen"
-      min-h="screen"
-      px="4 md:6 lg:8"
-      py="6 lg:8"
+      flex="~ col"
     >
-      <main mx="auto" max-w="7xl">
-        <RouterView />
-      </main>
+      <div
+        px="4 md:6 lg:8"
+        py="6 lg:8"
+        w="screen"
+        max-w="7xl"
+        mx="auto"
+        flex="1 ~ col gap-4"
+      >
+        <AppNav />
+        <main flex="~ col 1">
+          <RouterView />
+        </main>
+      </div>
     </div>
   </NConfigProvider>
 </template>

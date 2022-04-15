@@ -19,6 +19,7 @@ export default defineConfig({
     fontFamily: {
       sans: ["Ubuntu", "ui-system"],
       mono: ["Roboto Mono", "ui-mono"],
+      display: ["Faster One", "Roboto Mono", "ui-mono"],
     },
   },
 });
