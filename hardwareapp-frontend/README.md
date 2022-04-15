@@ -1,6 +1,6 @@
 # hardwareapp-frontend
 
-## [Live](https://hardware-bay.vercel.app/)
+## [Deploy (at that point)](https://hardware-p4vu5v8iv-matijao.vercel.app/)
 
 ## Customize configuration
 
