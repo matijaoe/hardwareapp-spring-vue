@@ -2,11 +2,18 @@ import {
   type HardwareCreate,
   HardwareType,
   type Hardware,
+  type HardwareDTO,
 } from "@/models/hardware";
 import { useHardwareStore } from "@/stores/hardware";
 import { generateAlphanumericId } from "@/utils";
 import { set } from "@vueuse/core";
-import type { FormInst, FormRules } from "naive-ui";
+import {
+  NButton,
+  useMessage,
+  useNotification,
+  type FormInst,
+  type FormRules,
+} from "naive-ui";
 import { useItemAdd } from "./hardware/use-item-add";
 
 export const useCreateForm = () => {
@@ -15,6 +22,10 @@ export const useCreateForm = () => {
 
   const store = useHardwareStore();
   const { rules } = useCreateFormRules();
+  const { createItem, item } = useItemAdd();
+
+  const message = useMessage();
+  const { showItemCreatedNotification } = useItemCreateFormNotifications();
 
   const modelDefault = (): HardwareCreate => ({
     name: "",
@@ -26,28 +37,34 @@ export const useCreateForm = () => {
 
   const model = ref(modelDefault());
 
+  const typeOptions = Object.values(HardwareType).map((type) => ({
+    label: type,
+    value: type,
+  }));
+
   const generateCode = () => {
     set(model.value, "code", generateAlphanumericId());
     codeInputRef.value?.focus();
     codeInputRef.value?.blur();
   };
 
-  const typeOptions = Object.values(HardwareType).map((type) => ({
-    label: type,
-    value: type,
-  }));
-
-  const { createItem, item } = useItemAdd();
-
   const submitForm = async (e: MouseEvent) => {
     e.preventDefault();
     formRef.value?.validate(async (errors) => {
       if (errors) {
         console.log(errors);
+        message.error("Check your data and try again.");
       } else {
         await createItem(model.value as Hardware);
-        resetForm();
-        await store.fetchHardware();
+        if (item.value?.code) {
+          message.destroyAll();
+          message.success("Item created");
+          showItemCreatedNotification(item.value);
+          resetForm();
+          await store.fetchHardware();
+        } else {
+          message.error("Something went wrong creating the hardware");
+        }
       }
     });
   };
@@ -126,5 +143,39 @@ export const useCreateFormRules = () => {
 
   return {
     rules,
+  };
+};
+
+const useItemCreateFormNotifications = () => {
+  const router = useRouter();
+  const notification = useNotification();
+
+  const showItemCreatedNotification = (item: HardwareDTO) => {
+    const n = notification.success({
+      title: "Item created",
+      content: `You have successfully added ${item.name} to your list of hardware.`,
+      action: () =>
+        h(
+          NButton,
+          {
+            type: "primary",
+            onClick: () => {
+              if (item.code) {
+                router.push({
+                  name: "HardwareItem",
+                  params: { code: item.code },
+                });
+              }
+              n.destroy();
+            },
+          },
+          { default: () => "Go to item" }
+        ),
+      onClose: () => n.destroy(),
+    });
+  };
+
+  return {
+    showItemCreatedNotification,
   };
 };

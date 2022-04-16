@@ -26,5 +26,3 @@ const store = useHardwareStore();
     </n-alert>
   </n-scrollbar>
 </template>
-
-<style lang="scss" scoped></style>

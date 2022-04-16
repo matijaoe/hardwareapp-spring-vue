@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useCreateForm } from "@/composables/use-create-form";
 import {
   PhArrowCounterClockwise,
   PhCurrencyDollar,
@@ -7,8 +8,6 @@ import {
   PhPackage,
   PhPlusCircle,
 } from "phosphor-vue";
-
-import { useCreateForm } from "@/composables/use-create-form";
 
 const {
   model,
@@ -71,8 +70,8 @@ const {
         <n-input-number
           v-model:value="model.price"
           @keydown.enter.prevent
-          min="0.5"
-          step="1"
+          :min="5"
+          :step="1"
         >
           <template #prefix>
             <ph-currency-dollar weigth="bold" size="18" mr="1.5" />
@@ -110,5 +109,3 @@ const {
     </n-form>
   </n-card>
 </template>
-
-<style lang="scss" scoped></style>

@@ -30,5 +30,3 @@ const message = computed(() => {
     {{ message }}
   </n-alert>
 </template>
-
-<style lang="scss" scoped></style>

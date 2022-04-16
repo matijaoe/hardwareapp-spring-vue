@@ -22,5 +22,3 @@ const router = useRouter();
     </n-button>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
