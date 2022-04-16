@@ -35,13 +35,6 @@ watchEffect(async () => {
       <div flex="~ gap-4" justify="between">
         <div flex="~ gap-2">
           <n-button @click="gotoHardware">Go back</n-button>
-          <n-button @click="gotoHardwareItem('N82E16819113664')">
-            Ryzen 9
-          </n-button>
-          <n-button @click="gotoHardwareItem('BX8071512900K')">
-            Intel i9
-          </n-button>
-          <n-button @click="gotoHardwareItem('nepostojeci')">404</n-button>
         </div>
 
         <PopConfirmDelete @confirm="deleteItemHandler">

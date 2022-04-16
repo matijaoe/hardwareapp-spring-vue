@@ -17,19 +17,14 @@ const store = useHardwareStore();
       flex="1"
       :items="store.hardware"
     />
-    <n-alert
-      v-else-if="!store.loading"
-      title="No hardware found"
-      type="error"
-      w="full"
-    >
+    <div v-else-if="store.loading" flex="1 ~ col" space="y-2">
+      <n-skeleton v-for="n in 7" :key="n" height="82px" :sharp="false" />
+    </div>
+    <n-alert v-else title="No hardware found" type="error" w="full">
       <template #icon>
         <ph-x-circle weight="fill" />
       </template>
       List of hardware is empty.
     </n-alert>
-    <div v-else flex="~ col" space="y-2">
-      <n-skeleton v-for="n in 7" :key="n" height="82px" :sharp="false" />
-    </div>
   </n-scrollbar>
 </template>
