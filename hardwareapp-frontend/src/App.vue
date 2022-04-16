@@ -3,7 +3,7 @@ import { darkTheme } from "naive-ui";
 </script>
 
 <template>
-  <NConfigProvider :theme="darkTheme">
+  <n-config-provider :theme="darkTheme">
     <div
       min-h="screen"
       bg="background-dark"
@@ -25,7 +25,7 @@ import { darkTheme } from "naive-ui";
         </main>
       </div>
     </div>
-  </NConfigProvider>
+  </n-config-provider>
 </template>
 
 <style>

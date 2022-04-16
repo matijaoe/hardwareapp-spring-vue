@@ -9,28 +9,45 @@ store.fetchHardware();
 
 <template>
   <div flex="1 ~ col" h="full">
-    <NH1 prefix="bar" type="success" mb="8" flex="~ gap-4" items="center">
-      <NText>Available hardware</NText>
-      <div flex="~ gap-1" items="center">
-        <NButton type="primary" secondary circle @click="store.fetchHardware">
-          <template #icon>
-            <ph-arrows-clockwise />
+    <div mb="5 sm:6  lg:8" flex="~ gap-4" items="center">
+      <n-h2 prefix="bar" type="success" mb="0" text="xl sm:2xl lg:3xl"
+        >Available hardware</n-h2
+      >
+      <div flex="~ gap-2" items="center">
+        <n-tooltip>
+          <template #trigger>
+            <n-button
+              type="primary"
+              secondary
+              circle
+              @click="store.fetchHardware"
+            >
+              <template #icon>
+                <ph-arrows-clockwise />
+              </template>
+            </n-button>
           </template>
-        </NButton>
-        <NButton
-          v-if="store.hasHardware"
-          type="info"
-          secondary
-          circle
-          @click="store.shuffleHardware"
-        >
-          <template #icon>
-            <ph-shuffle />
+          Refresh
+        </n-tooltip>
+
+        <n-tooltip v-if="store.hasHardware">
+          <template #trigger>
+            <n-button
+              type="info"
+              secondary
+              circle
+              @click="store.shuffleHardware"
+            >
+              <template #icon>
+                <ph-shuffle />
+              </template>
+            </n-button>
           </template>
-        </NButton>
+          Shuffle
+        </n-tooltip>
       </div>
-    </NH1>
-    <div flex="1 ~ col-reverse lg:row gap-2 lg:gap-12" max-w="lg:100">
+    </div>
+    <div flex="1 ~ col-reverse gap-2 lg:(row gap-12)" max-w="lg:100">
       <HardwareList
         v-if="store.hasHardware"
         w="full"
@@ -39,12 +56,12 @@ store.fetchHardware();
         :items="store.hardware"
       />
       <div v-else w="full">
-        <NAlert title="No hardware found" type="error">
+        <n-alert title="No hardware found" type="error">
           <template #icon>
             <ph-x-circle weight="fill" />
           </template>
           List of hardware is empty.
-        </NAlert>
+        </n-alert>
       </div>
     </div>
   </div>

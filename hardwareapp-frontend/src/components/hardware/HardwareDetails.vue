@@ -13,13 +13,13 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
 </script>
 
 <template>
-  <NCard size="huge">
+  <n-card size="huge">
     <template #header>
       <p text="md md:lg dark-50" font="mono">{{ item.code }}</p>
     </template>
     <div h="full" flex="~ col gap-24" justify="between" mt="-3 lg:-2">
       <div>
-        <h2 text="xl lg:3xl lg:4xl light-900">
+        <h2 text="xl lg:4xl light-900">
           {{ item.name }}
         </h2>
       </div>
@@ -33,5 +33,5 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
         <ph-tag text="primary" weight="duotone" />
       </div>
     </div>
-  </NCard>
+  </n-card>
 </template>

@@ -34,38 +34,38 @@ watchEffect(async () => {
     <template v-if="item">
       <div flex="~ gap-4" justify="between">
         <div flex="~ gap-2">
-          <NButton @click="gotoHardware">Go back</NButton>
-          <NButton @click="gotoHardwareItem('N82E16819113664')">
+          <n-button @click="gotoHardware">Go back</n-button>
+          <n-button @click="gotoHardwareItem('N82E16819113664')">
             Ryzen 9
-          </NButton>
-          <NButton @click="gotoHardwareItem('BX8071512900K')">
+          </n-button>
+          <n-button @click="gotoHardwareItem('BX8071512900K')">
             Intel i9
-          </NButton>
-          <NButton @click="gotoHardwareItem('nepostojeci')">404</NButton>
+          </n-button>
+          <n-button @click="gotoHardwareItem('nepostojeci')">404</n-button>
         </div>
 
         <PopConfirmDelete @confirm="deleteItemHandler">
-          <NButton class="visible" type="error" secondary>
+          <n-button class="visible" type="error" secondary>
             <template #icon>
               <ph-x weight="bold" />
             </template>
             Delete
-          </NButton>
+          </n-button>
         </PopConfirmDelete>
       </div>
-      <NSpin :show="loading">
+      <n-spin :show="loading">
         <div flex="~ col-reverse lg:row gap-4">
           <HardwareDetails :item="item" />
           <HardwarePriceMessage :price="item.price" class="lg:flex-[600px]" />
         </div>
-      </NSpin>
+      </n-spin>
     </template>
     <div
       v-else-if="!fetching"
       class="grid place-content-center -translate-y-[8vh]"
       flex="1"
     >
-      <NResult
+      <n-result
         status="404"
         title="Item not found"
         description="Gone but not forgotten"
@@ -73,7 +73,7 @@ watchEffect(async () => {
         <template #footer>
           <n-button @click="gotoHardware">Find something else</n-button>
         </template>
-      </NResult>
+      </n-result>
     </div>
   </div>
 </template>

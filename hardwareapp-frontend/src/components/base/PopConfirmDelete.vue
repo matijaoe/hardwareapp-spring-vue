@@ -12,7 +12,7 @@ const vars = useThemeVars();
 </script>
 
 <template>
-  <NPopconfirm @positive-click="emit('confirm')">
+  <n-popconfirm @positive-click="emit('confirm')">
     <template #trigger>
       <slot />
     </template>
@@ -20,5 +20,5 @@ const vars = useThemeVars();
       <ph-warning :color="vars.errorColor" weight="fill" />
     </template>
     <slot name="content">Delete this item?</slot>
-  </NPopconfirm>
+  </n-popconfirm>
 </template>

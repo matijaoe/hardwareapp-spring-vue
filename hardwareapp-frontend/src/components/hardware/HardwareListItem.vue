@@ -14,9 +14,9 @@ const { deleteItem, loading } = useItemDelete();
 </script>
 
 <template>
-  <NSpin :show="loading">
+  <n-spin :show="loading">
     <li cursor="pointer" class="group">
-      <NCard
+      <n-card
         hoverable
         size="medium"
         border="hover:primary"
@@ -33,7 +33,7 @@ const { deleteItem, loading } = useItemDelete();
             <h4 text="lg">{{ item.name }}</h4>
           </div>
           <PopConfirmDelete @confirm="deleteItem(item.code)">
-            <NButton
+            <n-button
               class="visible"
               circle
               quaternary
@@ -43,10 +43,10 @@ const { deleteItem, loading } = useItemDelete();
               <template #icon>
                 <ph-x weight="bold" />
               </template>
-            </NButton>
+            </n-button>
           </PopConfirmDelete>
         </div>
-      </NCard>
+      </n-card>
     </li>
-  </NSpin>
+  </n-spin>
 </template>

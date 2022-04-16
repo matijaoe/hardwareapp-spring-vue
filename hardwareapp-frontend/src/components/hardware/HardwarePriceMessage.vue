@@ -23,12 +23,12 @@ const message = computed(() => {
 </script>
 
 <template>
-  <NAlert title="Obročna uplata" type="info" h="full" weight="fill">
+  <n-alert title="Obročna uplata" type="info" h="full" weight="fill">
     <template #icon>
       <ph-info weight="fill" />
     </template>
     {{ message }}
-  </NAlert>
+  </n-alert>
 </template>
 
 <style lang="scss" scoped></style>

@@ -17,7 +17,7 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
 </script>
 
 <template>
-  <NScrollbar max-h="lg:75vh" p="r-2">
+  <n-scrollbar max-h="lg:75vh" p="r-2">
     <div p="r-2">
       <TransitionGroup
         name="list"
@@ -35,7 +35,7 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
         />
       </TransitionGroup>
     </div>
-  </NScrollbar>
+  </n-scrollbar>
 </template>
 
 <style>

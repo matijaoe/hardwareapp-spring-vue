@@ -2,8 +2,7 @@ import {
   defineConfig,
   presetAttributify,
   presetUno,
-  // transformerDirectives,
-  // transformerVariantGroup,
+  transformerVariantGroup,
 } from "unocss";
 
 export default defineConfig({
@@ -22,4 +21,5 @@ export default defineConfig({
       display: ["Faster One", "Roboto Mono", "ui-mono"],
     },
   },
+  transformers: [transformerVariantGroup()],
 });

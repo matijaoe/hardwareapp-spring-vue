@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ["vue", "vue-router", "pinia", "@vueuse/core"],
+      imports: ["vue", "vue/macros", "vue-router", "pinia", "@vueuse/core"],
       dts: true,
     }),
     ViteFonts({
