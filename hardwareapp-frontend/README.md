@@ -1,9 +1,9 @@
 # hardwareapp-frontend
 
 ## Deploys
-- #### [Latest](https://hardware-bay.vercel.app/)
-- #### [Lab 4](https://hardware-m1gv94zf5-matijao.vercel.app/)
-- #### [Lab 3](https://hardware-b2icz40x2-matijao.vercel.app/)
+- [Latest](https://hardware-bay.vercel.app/)
+- [Lab 4](https://hardware-m1gv94zf5-matijao.vercel.app/)
+- [Lab 3](https://hardware-b2icz40x2-matijao.vercel.app/)
 
 
 ## Project Setup
