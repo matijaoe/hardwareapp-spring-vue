@@ -25,7 +25,7 @@ const message = computed(() => {
 <template>
   <NAlert title="Obročna uplata" type="info" h="full" weight="fill">
     <template #icon>
-      <PhInfo weight="fill" />
+      <ph-info weight="fill" />
     </template>
     {{ message }}
   </NAlert>

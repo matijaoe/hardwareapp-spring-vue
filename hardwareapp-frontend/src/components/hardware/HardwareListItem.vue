@@ -41,7 +41,7 @@ const { deleteItem, loading } = useItemDelete();
               @click.stop=""
             >
               <template #icon>
-                <PhX weight="bold" />
+                <ph-x weight="bold" />
               </template>
             </NButton>
           </PopConfirmDelete>

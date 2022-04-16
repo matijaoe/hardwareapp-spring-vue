@@ -14,7 +14,7 @@ store.fetchHardware();
       <div flex="~ gap-1" items="center">
         <NButton type="primary" secondary circle @click="store.fetchHardware">
           <template #icon>
-            <PhArrowsClockwise />
+            <ph-arrows-clockwise />
           </template>
         </NButton>
         <NButton
@@ -25,7 +25,7 @@ store.fetchHardware();
           @click="store.shuffleHardware"
         >
           <template #icon>
-            <PhShuffle />
+            <ph-shuffle />
           </template>
         </NButton>
       </div>
@@ -41,7 +41,7 @@ store.fetchHardware();
       <div v-else w="full">
         <NAlert title="No hardware found" type="error">
           <template #icon>
-            <PhXCircle weight="fill" />
+            <ph-x-circle weight="fill" />
           </template>
           List of hardware is empty.
         </NAlert>

@@ -17,7 +17,7 @@ const vars = useThemeVars();
       <slot />
     </template>
     <template #icon>
-      <PhWarning :color="vars.errorColor" weight="fill" />
+      <ph-warning :color="vars.errorColor" weight="fill" />
     </template>
     <slot name="content">Delete this item?</slot>
   </NPopconfirm>

@@ -47,7 +47,7 @@ watchEffect(async () => {
         <PopConfirmDelete @confirm="deleteItemHandler">
           <NButton class="visible" type="error" secondary>
             <template #icon>
-              <PhX weight="bold" />
+              <ph-x weight="bold" />
             </template>
             Delete
           </NButton>
