@@ -1,10 +1,10 @@
 # hardwareapp-frontend
 
-## [Deploy (at that point)](https://hardware-p4vu5v8iv-matijao.vercel.app/)
+## Deploys
+- ## [Latest](https://hardware-bay.vercel.app/)
+- ## [Lab 3](https://hardware-b2icz40x2-matijao.vercel.app/)
+- ## [Lab 4](https://hardware-m1gv94zf5-matijao.vercel.app/)
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
