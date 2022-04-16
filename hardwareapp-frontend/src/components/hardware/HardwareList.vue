@@ -36,7 +36,6 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
 </template>
 
 <style>
-/* TODO */
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {

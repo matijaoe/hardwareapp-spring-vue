@@ -13,9 +13,9 @@ const store = useHardwareStore();
   >
     <HardwareList
       v-if="store.hasHardware"
+      :items="store.hardware"
       w="full"
       flex="1"
-      :items="store.hardware"
     />
     <div v-else-if="store.loading" flex="1 ~ col" space="y-2">
       <n-skeleton v-for="n in 7" :key="n" height="82px" :sharp="false" />

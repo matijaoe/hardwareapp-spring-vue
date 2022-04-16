@@ -5,7 +5,6 @@ import { set } from "@vueuse/core";
 
 export const useHardwareStore = defineStore("hardware", () => {
   const hardware = ref<HardwareDTO[]>([]);
-
   const loading = ref(false);
 
   const hasHardware = computed(() => hardware.value?.length > 0);

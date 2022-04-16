@@ -8,17 +8,15 @@ type Props = {
 const props = defineProps<Props>();
 
 const message = computed(() => {
-  let msg = "";
   if (props.price < 200) {
-    msg = "Ovaj hardver se ne može kupiti na rate.";
+    return "Ovaj hardver se ne može kupiti na rate.";
   } else if (props.price < 500) {
-    msg = "Ovaj hardver se može kupiti na 6 rata.";
+    return "Ovaj hardver se može kupiti na 6 rata.";
   } else if (props.price < 900) {
-    msg = "Ovaj hardver se može kupiti na 12 rata.";
+    return "Ovaj hardver se može kupiti na 12 rata.";
   } else {
-    msg = "Ovaj hardver se može kupiti na 24 rate.";
+    return "Ovaj hardver se može kupiti na 24 rate.";
   }
-  return msg;
 });
 </script>
 
