@@ -1,102 +1,25 @@
 <script setup lang="ts">
-import { HardwareType, type HardwareCreate } from "@/models/hardware";
-import type { FormInst, FormRules } from "naive-ui";
 import {
-  PhFingerprintSimple,
+  PhArrowCounterClockwise,
   PhCurrencyDollar,
+  PhFingerprintSimple,
   PhIdentificationCard,
   PhPackage,
   PhPlusCircle,
-  PhArrowCounterClockwise,
 } from "phosphor-vue";
-import { generateAlphanumericId } from "@/utils";
-import { set } from "@vueuse/core";
 
-const formRef = ref<FormInst | null>(null);
+import { useCreateForm } from "@/composables/use-create-form";
 
-const modelDefault = (): HardwareCreate => ({
-  name: "",
-  code: "",
-  price: null,
-  type: null,
-  availableCount: null,
-});
-
-const model = ref(modelDefault());
-
-const generateCode = () => {
-  set(model.value, "code", generateAlphanumericId());
-};
-
-const typeOptions = Object.values(HardwareType).map((type) => ({
-  label: type,
-  value: type,
-}));
-
-const rules: FormRules = {
-  name: [
-    {
-      required: true,
-      message: "Hardware name is required",
-      trigger: ["input", "blur"],
-    },
-    {
-      min: 4,
-      message: "Name should be at least 4 characters",
-      trigger: ["input", "blur"],
-    },
-  ],
-  code: [
-    {
-      required: true,
-      message: "Hardware code is required",
-      trigger: ["input", "blur"],
-    },
-    {
-      min: 6,
-      message: "Code should be at least 6 characters",
-      trigger: ["input", "blur"],
-    },
-  ],
-  type: [
-    {
-      required: true,
-      enum: Object.values(HardwareType),
-      type: "enum",
-      message: "Hardware type is required",
-      trigger: ["input", "blur"],
-    },
-  ],
-  price: [
-    {
-      type: "number",
-      required: true,
-      message: "Hardware price is required",
-      trigger: ["input", "blur"],
-    },
-  ],
-  availableCount: [
-    {
-      type: "number",
-      required: true,
-      message: "Available count is required",
-      trigger: ["input", "blur"],
-    },
-  ],
-};
-
-const submitForm = (e: MouseEvent) => {
-  e.preventDefault();
-  formRef.value?.validate((errors) => {
-    console.log(errors);
-  });
-};
-
-const resetForm = (e: MouseEvent) => {
-  e.preventDefault();
-  formRef.value?.restoreValidation();
-  set(model, modelDefault());
-};
+const {
+  model,
+  rules,
+  typeOptions,
+  generateCode,
+  submitForm,
+  resetForm,
+  formRef,
+  codeInputRef,
+} = useCreateForm();
 </script>
 
 <template>
@@ -111,7 +34,11 @@ const resetForm = (e: MouseEvent) => {
     >
       <n-form-item path="code" label="Code">
         <n-input-group>
-          <n-input v-model:value="model.code" @keydown.enter.prevent>
+          <n-input
+            v-model:value="model.code"
+            @keydown.enter.prevent
+            ref="codeInputRef"
+          >
             <template #prefix>
               <ph-fingerprint-simple weigth="bold" size="18" mr="1.5" />
             </template>
