@@ -53,6 +53,7 @@ export const useCreateForm = () => {
     formRef.value?.validate(async (errors) => {
       if (errors) {
         console.log(errors);
+        message.error("Please fill out all required fields.");
       } else {
         await createItem(model.value as Hardware);
         if (item.value?.code) {

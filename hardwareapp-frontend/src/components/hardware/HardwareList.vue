@@ -23,6 +23,7 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
     flex="~ col"
     space="y-2"
     class="relative"
+    w="full"
   >
     <HardwareListItem
       v-for="item in items"
