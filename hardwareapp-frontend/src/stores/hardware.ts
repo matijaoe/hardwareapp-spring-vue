@@ -6,17 +6,16 @@ import { set } from "@vueuse/core";
 export const useHardwareStore = defineStore("hardware", () => {
   const hardware = ref<HardwareDTO[]>([]);
 
+  const hasHardware = computed(() => hardware.value?.length > 0);
+
   const fetchHardware = async () => {
     try {
       const data = await getAllHardware();
-      if (data) {
-        set(hardware, data);
-        return hardware.value;
-      }
-      return null;
+      set(hardware, data ?? []);
+      return hardware.value;
     } catch (err: any) {
       console.error(err.message, err);
-      return null;
+      set(hardware, []);
     }
   };
 
@@ -24,6 +23,7 @@ export const useHardwareStore = defineStore("hardware", () => {
 
   return {
     hardware,
+    hasHardware,
     fetchHardware,
     shuffleHardware,
   };

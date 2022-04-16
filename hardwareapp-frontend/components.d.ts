@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     NSpin: typeof import('naive-ui')['NSpin']
     NTag: typeof import('naive-ui')['NTag']
     NText: typeof import('naive-ui')['NText']
+    PopConfirmDelete: typeof import('./src/components/base/PopConfirmDelete.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheTransition: typeof import('./src/components/transition/TheTransition.vue')['default']

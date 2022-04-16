@@ -32,25 +32,19 @@ const { deleteItem, loading } = useItemDelete();
             />
             <h4 text="lg">{{ item.name }}</h4>
           </div>
-          <NPopconfirm
-            :show-icon="false"
-            @positive-click="deleteItem(item.code)"
-          >
-            <template #activator>
-              <NButton
-                class="visible"
-                circle
-                quaternary
-                type="error"
-                @click.stop=""
-              >
-                <template #icon>
-                  <PhX />
-                </template>
-              </NButton>
-            </template>
-            Delete this item?
-          </NPopconfirm>
+          <PopConfirmDelete @confirm="deleteItem(item.code)">
+            <NButton
+              class="visible"
+              circle
+              quaternary
+              type="error"
+              @click.stop=""
+            >
+              <template #icon>
+                <PhX weight="bold" />
+              </template>
+            </NButton>
+          </PopConfirmDelete>
         </div>
       </NCard>
     </li>

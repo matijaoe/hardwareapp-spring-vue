@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { useItemDelete } from "@/composables/hardware/use-item-delete";
 import { useItemFetch } from "@/composables/hardware/use-item-fetch";
+import { PhX } from "phosphor-vue";
 
 const router = useRouter();
 const route = useRoute();
 
-const { item, loading: fetching, fetchItem } = useItemFetch();
+const { fetchItem, item, loading: fetching } = useItemFetch();
+const { deleteItem, loading, isDeleted } = useItemDelete();
 
 const gotoHardware = () => router.push({ name: "Hardware" });
 const gotoHardwareItem = (code: string) =>
   router.push({ name: "HardwareItem", params: { code } });
-
-const { deleteItem, loading, isDeleted } = useItemDelete();
 
 const deleteItemHandler = async () => {
   if (item.value) {
@@ -43,19 +43,20 @@ watchEffect(async () => {
           </NButton>
           <NButton @click="gotoHardwareItem('nepostojeci')">404</NButton>
         </div>
-        <div>
-          <NPopconfirm :show-icon="false" @positive-click="deleteItemHandler">
-            <template #activator>
-              <NButton class="visible" type="error">Delete</NButton>
+
+        <PopConfirmDelete @confirm="deleteItemHandler">
+          <NButton class="visible" type="error" secondary>
+            <template #icon>
+              <PhX weight="bold" />
             </template>
-            Delete this item?
-          </NPopconfirm>
-        </div>
+            Delete
+          </NButton>
+        </PopConfirmDelete>
       </div>
       <NSpin :show="loading">
         <div flex="~ col-reverse lg:row gap-4">
           <HardwareDetails :item="item" />
-          <HardwarePriceMessage :price="item.price" class="lg:flex-[500px]" />
+          <HardwarePriceMessage :price="item.price" class="lg:flex-[600px]" />
         </div>
       </NSpin>
     </template>
@@ -64,7 +65,7 @@ watchEffect(async () => {
       class="grid place-content-center -translate-y-[8vh]"
       flex="1"
     >
-      <n-result
+      <NResult
         status="404"
         title="Item not found"
         description="Gone but not forgotten"
@@ -72,7 +73,7 @@ watchEffect(async () => {
         <template #footer>
           <n-button @click="gotoHardware">Find something else</n-button>
         </template>
-      </n-result>
+      </NResult>
     </div>
   </div>
 </template>
