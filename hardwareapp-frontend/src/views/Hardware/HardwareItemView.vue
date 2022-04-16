@@ -10,8 +10,6 @@ const { fetchItem, item, loading: fetching } = useItemFetch();
 const { deleteItem, loading, isDeleted } = useItemDelete();
 
 const gotoHardware = () => router.push({ name: "Hardware" });
-const gotoHardwareItem = (code: string) =>
-  router.push({ name: "HardwareItem", params: { code } });
 
 const deleteItemHandler = async () => {
   if (item.value) {
