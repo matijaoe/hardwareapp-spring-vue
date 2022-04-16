@@ -1,3 +1,5 @@
+import { customAlphabet } from "nanoid";
+
 export const formatNumber = (n: number) =>
   n.toLocaleString("en", {
     minimumFractionDigits: 2,
@@ -14,4 +16,12 @@ export const shuffleArray = (a: any[]) => {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+};
+
+export const generateAlphanumericId = (length = 15) => {
+  const nanoid = customAlphabet(
+    "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    length
+  );
+  return nanoid();
 };

@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>Moja forma</h1>
+  <div>
+    <HardwareCreateForm />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

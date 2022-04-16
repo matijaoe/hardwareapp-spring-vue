@@ -10,14 +10,14 @@ store.fetchHardware();
   <div flex="1 ~ col" h="full">
     <HardwareViewHeader />
     <div
-      flex="1 ~ col-reverse lg:row gap-4"
-      max-h="lg:72vh 2xl:80vh"
+      flex="1 ~ col-reverse gap-4 lg:(row gap-8) "
+      max-h="lg:70vh xl:74vh 2xl:77vh 3xl:80vh"
       overflow="hidden"
     >
       <HardwareViewAside
         flex="1 ~ gap-2 lg:(row gap-12)"
         max-w="lg:100"
-        max-h="lg:72vh 2xl:80vh"
+        max-h="lg:70vh xl:74vh 2xl:77vh 3xl:80vh"
       />
       <HardwareViewForm flex="1" />
     </div>
