@@ -1,6 +1,6 @@
 # hardwareapp-frontend
 
-## [Deploy (at that point)](https://hardware-p4vu5v8iv-matijao.vercel.app/)
+## [Deploy (at that point)](https://hardware-b2icz40x2-matijao.vercel.app/)
 
 ## Customize configuration
 
