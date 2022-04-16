@@ -1,7 +1,7 @@
 import {
-  type HardwareCreate,
   HardwareType,
   type Hardware,
+  type HardwareCreate,
   type HardwareDTO,
 } from "@/models/hardware";
 import { useHardwareStore } from "@/stores/hardware";
@@ -53,17 +53,15 @@ export const useCreateForm = () => {
     formRef.value?.validate(async (errors) => {
       if (errors) {
         console.log(errors);
-        message.error("Check your data and try again.");
       } else {
         await createItem(model.value as Hardware);
         if (item.value?.code) {
           message.destroyAll();
-          message.success("Item created");
           showItemCreatedNotification(item.value);
           resetForm();
           await store.fetchHardware();
         } else {
-          message.error("Something went wrong creating the hardware");
+          message.error("Something went wrong while creating the item.");
         }
       }
     });
