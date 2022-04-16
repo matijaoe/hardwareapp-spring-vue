@@ -17,24 +17,25 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
 </script>
 
 <template>
-  <div overflow="y-auto x-hidden" p="r-2">
-    <TransitionGroup
-      name="list"
-      tag="ul"
-      flex="~ col"
-      space="y-2"
-      max-h="lg:75vh"
-      class="relative"
-    >
-      <HardwareListItem
-        v-for="item in items"
-        :key="item.code"
-        :item="item"
-        @click="gotoHardwareItem(item)"
-        w="full"
-      />
-    </TransitionGroup>
-  </div>
+  <NScrollbar max-h="lg:75vh" p="r-2">
+    <div p="r-2">
+      <TransitionGroup
+        name="list"
+        tag="ul"
+        flex="~ col"
+        space="y-2"
+        class="relative"
+      >
+        <HardwareListItem
+          v-for="item in items"
+          :key="item.code"
+          :item="item"
+          @click="gotoHardwareItem(item)"
+          w="full"
+        />
+      </TransitionGroup>
+    </div>
+  </NScrollbar>
 </template>
 
 <style>
