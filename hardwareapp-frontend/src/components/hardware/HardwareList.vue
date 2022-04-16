@@ -17,25 +17,21 @@ const gotoHardwareItem = ({ code }: HardwareDTO) =>
 </script>
 
 <template>
-  <n-scrollbar max-h="lg:75vh" p="r-2">
-    <div p="r-2">
-      <TransitionGroup
-        name="list"
-        tag="ul"
-        flex="~ col"
-        space="y-2"
-        class="relative"
-      >
-        <HardwareListItem
-          v-for="item in items"
-          :key="item.code"
-          :item="item"
-          @click="gotoHardwareItem(item)"
-          w="full"
-        />
-      </TransitionGroup>
-    </div>
-  </n-scrollbar>
+  <TransitionGroup
+    name="list"
+    tag="ul"
+    flex="~ col"
+    space="y-2"
+    class="relative"
+  >
+    <HardwareListItem
+      v-for="item in items"
+      :key="item.code"
+      :item="item"
+      @click="gotoHardwareItem(item)"
+      w="full"
+    />
+  </TransitionGroup>
 </template>
 
 <style>

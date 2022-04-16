@@ -13,7 +13,7 @@ import { darkTheme } from "naive-ui";
     >
       <div
         px="4 md:6 lg:8"
-        py="6 lg:8"
+        py="6"
         w="screen"
         max-w="7xl"
         mx="auto"
