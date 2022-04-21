@@ -31,6 +31,8 @@ declare module '@vue/runtime-core' {
     NInput: typeof import('naive-ui')['NInput']
     NInputGroup: typeof import('naive-ui')['NInputGroup']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
+    NList: typeof import('naive-ui')['NList']
+    NListItem: typeof import('naive-ui')['NListItem']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     NPopconfirm: typeof import('naive-ui')['NPopconfirm']
@@ -45,8 +47,10 @@ declare module '@vue/runtime-core' {
     NSpin: typeof import('naive-ui')['NSpin']
     NTag: typeof import("naive-ui")["NTag"];
     NText: typeof import("naive-ui")["NText"];
+    NThing: typeof import('naive-ui')['NThing']
     NTooltip: typeof import('naive-ui')['NTooltip']
     PopConfirmDelete: typeof import('./src/components/base/PopConfirmDelete.vue')['default']
+    ReviewItem: typeof import('./src/components/reviews/ReviewItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheTransition: typeof import('./src/components/transition/TheTransition.vue')['default']

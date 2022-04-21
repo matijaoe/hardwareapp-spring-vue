@@ -9,5 +9,5 @@ public class Review {
 
     private Rating rating;
     private String title;
-    private String description;
+    private String text;
 }
