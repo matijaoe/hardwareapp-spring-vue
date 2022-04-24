@@ -1,13 +1,15 @@
 package hr.tvz.osrecki.hardwareapp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
+@Builder
+@ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Hardware {
+
+    private Long id;
 
     @EqualsAndHashCode.Include()
     private String code;
