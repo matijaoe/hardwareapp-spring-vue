@@ -8,10 +8,11 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Hardware {
-    private String name;
 
     @EqualsAndHashCode.Include()
     private String code;
+
+    private String name;
 
     private Double price;
 

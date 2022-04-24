@@ -11,12 +11,12 @@ import javax.validation.constraints.PositiveOrZero;
 @Data
 public class HardwareCommand {
 
-    @NotBlank(message = "Name must not be empty")
-    private String name;
-
     @NotBlank(message = "Code must not be empty")
     @Length(min = 4, max = 255, message = "Code must be between 4 and 255 characters long")
     private String code;
+
+    @NotBlank(message = "Name must not be empty")
+    private String name;
 
     @NotNull(message = "Price is required")
     @Positive(message = "Price must be greater than 0")
@@ -28,5 +28,4 @@ public class HardwareCommand {
     @NotNull(message = "Available count is required")
     @PositiveOrZero(message = "Available count cannot be negative")
     private Integer availableCount;
-
 }

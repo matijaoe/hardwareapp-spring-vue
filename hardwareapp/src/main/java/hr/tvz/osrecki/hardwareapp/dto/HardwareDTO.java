@@ -6,7 +6,10 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class HardwareDTO {
-    private String name;
-    private Double price;
+
     private String code;
+
+    private String name;
+
+    private Double price;
 }
