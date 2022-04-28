@@ -9,6 +9,8 @@ public interface HardwareRepository {
 
     List<Hardware> findAll();
 
+    List<Hardware> searchByCode(String query);
+
     Optional<Hardware> findByCode(String code);
 
     Optional<Hardware> save(Hardware hardware);

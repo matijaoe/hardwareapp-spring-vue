@@ -32,6 +32,11 @@ public class MockHardwareRepository implements HardwareRepository {
     }
 
     @Override
+    public List<Hardware> searchByCode(String query) {
+        return null;
+    }
+
+    @Override
     public Optional<Hardware> findByCode(final String code) {
         return MOCK_HARDWARE.stream().filter(item -> Objects.equals(item.getCode(), code)).findAny();
     }

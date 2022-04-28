@@ -24,6 +24,12 @@ public class HardwareController {
         return hardwareService.findAll();
     }
 
+
+    @GetMapping("/search")
+    public List<HardwareDTO> search(@RequestParam(value = "query", required = true) String query) {
+        return hardwareService.searchByCode(query);
+    }
+
     @GetMapping("/{code}")
     public ResponseEntity<HardwareDTO> getHardware(@PathVariable String code) {
         return hardwareService

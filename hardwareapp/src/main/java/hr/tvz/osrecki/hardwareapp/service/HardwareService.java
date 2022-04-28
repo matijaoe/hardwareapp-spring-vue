@@ -10,6 +10,8 @@ public interface HardwareService {
 
     List<HardwareDTO> findAll();
 
+    List<HardwareDTO> searchByCode(String query);
+
     Optional<HardwareDTO> findByCode(String code);
 
     Optional<HardwareDTO> save(HardwareCommand command);

@@ -41,6 +41,17 @@ public class HardwareRepositoryImpl implements HardwareRepository {
     }
 
     @Override
+    public List<Hardware> searchByCode(String query) {
+        List<Hardware> hardware = new ArrayList<>();
+        try {
+            String pattern = query + "%";
+            return jdbc.query(SELECT_ALL + " WHERE LOWER(code) LIKE LOWER(?)", this::mapRowToHardware, pattern);
+        } catch (EmptyResultDataAccessException e) {
+            return hardware;
+        }
+    }
+
+    @Override
     public Optional<Hardware> findByCode(String code) {
         try {
             return Optional.ofNullable(jdbc.queryForObject(SELECT_ALL + "WHERE code = ?", this::mapRowToHardware, code));

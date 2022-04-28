@@ -22,6 +22,10 @@ public class HardwareServiceImpl implements HardwareService {
         return hardwareRepository.findAll().stream().map(this::mapHardwareToDTO).collect(Collectors.toList());
     }
 
+    public List<HardwareDTO> searchByCode(String query) {
+        return hardwareRepository.searchByCode(query).stream().map(this::mapHardwareToDTO).collect(Collectors.toList());
+    }
+
     @Override
     public Optional<HardwareDTO> findByCode(final String code) {
         return hardwareRepository.findByCode(code).map(this::mapHardwareToDTO);

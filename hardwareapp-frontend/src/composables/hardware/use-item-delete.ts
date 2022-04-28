@@ -17,11 +17,7 @@ export const useItemDelete = () => {
       console.error("Error deleting item", err);
       set(isDeleted, false);
     } finally {
-      // TODO: remove forced delay after flexing the animation
-      setTimeout(async () => {
-        set(loading, false);
-        await store.fetchHardware();
-      }, 500);
+      await store.fetchHardware();
     }
   };
 
