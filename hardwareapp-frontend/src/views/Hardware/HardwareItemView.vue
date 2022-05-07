@@ -49,9 +49,12 @@ watchEffect(async () => {
         </PopConfirmDelete>
       </div>
       <n-spin :show="loading">
-        <div flex="~ col-reverse lg:row gap-4">
+        <div flex="~ col-reverse lg:row gap-4" items="start">
           <HardwareDetails :item="item" />
-          <HardwarePriceMessage :price="item.price" class="lg:flex-[600px]" />
+          <div flex="~ col gap-4" justify="start" class="lg:flex-[900px]">
+            <HardwarePriceMessage :price="item.price" />
+            <HardwareReviews :reviews="reviews" :loading="reviewsLoading" />
+          </div>
         </div>
       </n-spin>
     </template>
@@ -69,10 +72,6 @@ watchEffect(async () => {
           <n-button @click="gotoHardware">Find something else</n-button>
         </template>
       </n-result>
-    </div>
-    <div v-if="reviewsLoading">Reviews Loading...</div>
-    <div>
-      {{ reviews }}
     </div>
   </div>
 </template>

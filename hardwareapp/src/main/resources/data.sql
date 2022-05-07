@@ -20,11 +20,20 @@ VALUES ('BX8071512700K', 'Intel Core i7-12700K', 384.98, 'CPU', 14),
        ('N82E16813119504', 'ASUS ROG Maximus Z690 Hero', 599.99, 'MBO', 5);
 
 INSERT INTO review (title, text, rating, hardware_id)
-VALUES ('Great product', 'I love this product', 5, 3),
-       ('Bad product', 'I hate this product', 1, 2),
+VALUES ('Pure intel trash', 'Intel be as intel does', 2, 1),
+       ('AMD is the best', 'AMD is the best', 1, 1),
+       ('Intel be fire tho', 'This is my recenzija and this is me writing something', 1, 2),
+       ('Bad product', 'I hate this product', 2, 2),
+       ('Trash', 'It broke my computer', 1, 2),
+       ('Great product', 'I love this product', 5, 3),
+       ('Ok', 'Ja sam Marko', 3, 3),
        ('Good product', 'I like this product', 4, 3),
-       ('Great product', 'I love this product', 5, 4),
-       ('Trash', 'I broke my computer', 1, 2),
+       ('Superiška', 'Bas je lepo', 5, 4),
+       ('Great product', 'I love this product', 4, 4),
+       ('Okay speeds', 'Could be faster', 4, 5),
+       ('Fast boi', 'Bet', 5, 6),
+       ('Doing it job', 'It better be, for that price', 4, 7),
+       ('Meh', 'Expected more', 2, 7),
        ('Lit', 'I like this product', 4, 8),
        ('Awesome', 'Thats it. Thats the review.', 5, 9),
-       ('Great product', 'I love this product', 5, 10);
+       ('Groovy product', 'I do be grooving with this product', 4, 10);

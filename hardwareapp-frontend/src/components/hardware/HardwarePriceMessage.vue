@@ -21,7 +21,7 @@ const message = computed(() => {
 </script>
 
 <template>
-  <n-alert title="Obročna uplata" type="info" h="full" weight="fill">
+  <n-alert title="Obročna uplata" type="info" weight="fill">
     <template #icon>
       <ph-info weight="fill" />
     </template>

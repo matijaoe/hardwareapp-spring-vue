@@ -17,7 +17,7 @@ const formattedPrice = computed(() => formatNumber(props.item.price));
     <template #header>
       <p text="md md:lg dark-50" font="mono">{{ item.code }}</p>
     </template>
-    <div h="full" flex="~ col gap-24" justify="between" mt="-3 lg:-2">
+    <div flex="~ col gap-24" justify="between" mt="-3 lg:-2">
       <div>
         <h2 text="xl lg:4xl light-900">
           {{ item.name }}

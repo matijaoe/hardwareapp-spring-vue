@@ -14,6 +14,8 @@ declare module '@vue/runtime-core' {
     HardwareList: typeof import('./src/components/hardware/HardwareList.vue')['default']
     HardwareListItem: typeof import('./src/components/hardware/HardwareListItem.vue')['default']
     HardwarePriceMessage: typeof import('./src/components/hardware/HardwarePriceMessage.vue')['default']
+    HardwareReview: typeof import('./src/components/hardware/HardwareReview.vue')['default']
+    HardwareReviews: typeof import('./src/components/hardware/HardwareReviews.vue')['default']
     HardwareViewAside: typeof import('./src/components/hardware/HardwareViewAside.vue')['default']
     HardwareViewForm: typeof import('./src/components/hardware/HardwareViewForm.vue')['default']
     HardwareViewHeader: typeof import('./src/components/hardware/HardwareViewHeader.vue')['default']
@@ -27,10 +29,14 @@ declare module '@vue/runtime-core' {
     NFormItem: typeof import('naive-ui')['NFormItem']
     NH1: typeof import('naive-ui')['NH1']
     NH2: typeof import('naive-ui')['NH2']
+    NH3: typeof import('naive-ui')['NH3']
+    NH4: typeof import('naive-ui')['NH4']
     NIcon: typeof import("naive-ui")["NIcon"];
     NInput: typeof import('naive-ui')['NInput']
     NInputGroup: typeof import('naive-ui')['NInputGroup']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
+    NList: typeof import('naive-ui')['NList']
+    NListItem: typeof import('naive-ui')['NListItem']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     NPopconfirm: typeof import('naive-ui')['NPopconfirm']
@@ -45,6 +51,8 @@ declare module '@vue/runtime-core' {
     NSpin: typeof import('naive-ui')['NSpin']
     NTag: typeof import("naive-ui")["NTag"];
     NText: typeof import("naive-ui")["NText"];
+    NThing: typeof import('naive-ui')['NThing']
+    NTitle: typeof import('naive-ui')['NTitle']
     NTooltip: typeof import('naive-ui')['NTooltip']
     PopConfirmDelete: typeof import('./src/components/base/PopConfirmDelete.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
