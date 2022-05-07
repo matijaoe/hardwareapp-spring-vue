@@ -2,6 +2,10 @@
 import { useHardwareStore } from "@/stores/hardware";
 import { PhShuffle, PhArrowsClockwise } from "phosphor-vue";
 
+import { useHardwareFetch } from "@/composables/hardware/use-hardware-fetch";
+
+const { fetchHardware } = useHardwareFetch();
+
 const store = useHardwareStore();
 </script>
 
@@ -13,12 +17,7 @@ const store = useHardwareStore();
     <div flex="~ gap-2" items="center">
       <n-tooltip>
         <template #trigger>
-          <n-button
-            type="primary"
-            secondary
-            circle
-            @click="store.fetchHardware"
-          >
+          <n-button type="primary" secondary circle @click="fetchHardware">
             <template #icon>
               <ph-arrows-clockwise />
             </template>

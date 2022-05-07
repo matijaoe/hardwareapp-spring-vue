@@ -23,4 +23,8 @@ INSERT INTO review (title, text, rating, hardware_id)
 VALUES ('Great product', 'I love this product', 5, 3),
        ('Bad product', 'I hate this product', 1, 2),
        ('Good product', 'I like this product', 4, 3),
-       ('Great product', 'I love this product', 5, 4);
+       ('Great product', 'I love this product', 5, 4),
+       ('Trash', 'I broke my computer', 1, 2),
+       ('Lit', 'I like this product', 4, 8),
+       ('Awesome', 'Thats it. Thats the review.', 5, 9),
+       ('Great product', 'I love this product', 5, 10);

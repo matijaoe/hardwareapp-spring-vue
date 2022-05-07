@@ -79,9 +79,9 @@ const {
         </n-input-number>
       </n-form-item>
 
-      <n-form-item path="availableCount" label="Available count" flex="1">
+      <n-form-item path="quantity" label="Available count" flex="1">
         <n-input-number
-          v-model:value="model.availableCount"
+          v-model:value="model.quantity"
           @keydown.enter.prevent
           step="1"
           :min="0"

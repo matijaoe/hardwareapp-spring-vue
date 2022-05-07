@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useHardwareStore } from "@/stores/hardware";
+import { useHardwareFetch } from "@/composables/hardware/use-hardware-fetch";
 
-const store = useHardwareStore();
+const { fetchHardware } = useHardwareFetch();
 
-store.fetchHardware();
+fetchHardware();
 </script>
 
 <template>

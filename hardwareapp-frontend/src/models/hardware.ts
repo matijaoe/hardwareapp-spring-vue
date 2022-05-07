@@ -3,7 +3,7 @@ export type Hardware = {
   code: string;
   price: number;
   type: HardwareType;
-  availableCount: number;
+  quantity: number;
 };
 
 export type HardwareCreate = {
@@ -11,7 +11,7 @@ export type HardwareCreate = {
   code: string;
   price: number | null;
   type: HardwareType | null;
-  availableCount: number | null;
+  quantity: number | null;
 };
 
 export type HardwareDTO = Pick<Hardware, "code" | "name" | "price">;

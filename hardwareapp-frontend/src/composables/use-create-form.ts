@@ -1,10 +1,10 @@
+import { useHardwareFetch } from "@/composables/hardware/use-hardware-fetch";
 import {
   HardwareType,
   type Hardware,
   type HardwareCreate,
   type HardwareDTO,
 } from "@/models/hardware";
-import { useHardwareStore } from "@/stores/hardware";
 import { generateAlphanumericId } from "@/utils";
 import { set } from "@vueuse/core";
 import {
@@ -20,19 +20,20 @@ export const useCreateForm = () => {
   const formRef = ref<FormInst | null>(null);
   const codeInputRef = ref<HTMLInputElement | null>(null);
 
-  const store = useHardwareStore();
   const { rules } = useCreateFormRules();
   const { createItem, item } = useItemAdd();
 
   const message = useMessage();
   const { showItemCreatedNotification } = useItemCreateFormNotifications();
 
+  const { fetchHardware } = useHardwareFetch();
+
   const modelDefault = (): HardwareCreate => ({
     name: "",
     code: "",
     price: null,
     type: null,
-    availableCount: null,
+    quantity: null,
   });
 
   const model = ref(modelDefault());
@@ -60,7 +61,7 @@ export const useCreateForm = () => {
           message.destroyAll();
           showItemCreatedNotification(item.value);
           resetForm();
-          await store.fetchHardware();
+          await fetchHardware();
         } else {
           message.error("Something went wrong while creating the item.");
         }
@@ -130,11 +131,11 @@ export const useCreateFormRules = () => {
         trigger: ["input", "blur"],
       },
     ],
-    availableCount: [
+    quantity: [
       {
         type: "number",
         required: true,
-        message: "Available count is required",
+        message: "Quantity is required",
         trigger: ["input", "blur"],
       },
     ],
