@@ -1,7 +1,7 @@
 DELETE
 FROM hardware;
 
-INSERT INTO hardware (code, name, price, type, availableCount)
+INSERT INTO hardware (code, name, price, type, quantity)
 VALUES ('BX8071512700K', 'Intel Core i7-12700K', 384.98, 'CPU', 14),
        ('BX8071512900K', 'Intel Core i9-12900K', 614.99, 'CPU', 6),
        ('N82E16819113683', 'AMD Ryzen 5 5600GE', 220.00, 'CPU', 22),

@@ -1,4 +1,4 @@
-package hr.tvz.osrecki.hardwareapp.model;
+package hr.tvz.osrecki.hardwareapp.hardware.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -25,7 +25,7 @@ public class HardwareCommand {
     @NotNull(message = "Type is required")
     private HardwareType type;
 
-    @NotNull(message = "Available count is required")
-    @PositiveOrZero(message = "Available count cannot be negative")
-    private Integer availableCount;
+    @NotNull(message = "Quantity is required")
+    @PositiveOrZero(message = "Quantity cannot be negative")
+    private Integer quantity;
 }

@@ -1,7 +1,7 @@
-package hr.tvz.osrecki.hardwareapp.service;
+package hr.tvz.osrecki.hardwareapp.hardware.service;
 
-import hr.tvz.osrecki.hardwareapp.dto.HardwareDTO;
-import hr.tvz.osrecki.hardwareapp.model.HardwareCommand;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareCommand;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareDTO;
 
 import java.util.List;
 import java.util.Optional;

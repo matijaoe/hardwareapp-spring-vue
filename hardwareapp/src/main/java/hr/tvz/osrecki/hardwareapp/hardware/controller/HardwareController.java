@@ -1,8 +1,8 @@
-package hr.tvz.osrecki.hardwareapp.controller;
+package hr.tvz.osrecki.hardwareapp.hardware.controller;
 
-import hr.tvz.osrecki.hardwareapp.dto.HardwareDTO;
-import hr.tvz.osrecki.hardwareapp.model.HardwareCommand;
-import hr.tvz.osrecki.hardwareapp.service.HardwareService;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareCommand;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareDTO;
+import hr.tvz.osrecki.hardwareapp.hardware.service.HardwareService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

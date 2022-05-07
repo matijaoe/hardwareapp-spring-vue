@@ -1,9 +1,9 @@
-package hr.tvz.osrecki.hardwareapp.service;
+package hr.tvz.osrecki.hardwareapp.hardware.service;
 
-import hr.tvz.osrecki.hardwareapp.dto.HardwareDTO;
-import hr.tvz.osrecki.hardwareapp.model.Hardware;
-import hr.tvz.osrecki.hardwareapp.model.HardwareCommand;
-import hr.tvz.osrecki.hardwareapp.repository.HardwareRepository;
+import hr.tvz.osrecki.hardwareapp.hardware.model.Hardware;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareCommand;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareDTO;
+import hr.tvz.osrecki.hardwareapp.hardware.repository.HardwareRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -51,12 +51,6 @@ public class HardwareServiceImpl implements HardwareService {
     }
 
     private Hardware mapCommandToHardware(final HardwareCommand command) {
-        return Hardware.builder()
-                .code(command.getCode())
-                .name(command.getName())
-                .price(command.getPrice())
-                .type(command.getType())
-                .availableCount(command.getAvailableCount())
-                .build();
+        return Hardware.builder().code(command.getCode()).name(command.getName()).price(command.getPrice()).type(command.getType()).quantity(command.getQuantity()).build();
     }
 }

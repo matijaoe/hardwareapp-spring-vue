@@ -1,7 +1,7 @@
-package hr.tvz.osrecki.hardwareapp.repository;
+package hr.tvz.osrecki.hardwareapp.hardware.repository;
 
-import hr.tvz.osrecki.hardwareapp.model.Hardware;
-import hr.tvz.osrecki.hardwareapp.model.HardwareType;
+import hr.tvz.osrecki.hardwareapp.hardware.model.Hardware;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareType;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

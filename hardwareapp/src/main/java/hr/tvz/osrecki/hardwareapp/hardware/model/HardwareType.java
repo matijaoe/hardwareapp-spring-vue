@@ -1,4 +1,4 @@
-package hr.tvz.osrecki.hardwareapp.model;
+package hr.tvz.osrecki.hardwareapp.hardware.model;
 
 public enum HardwareType {
     CPU,

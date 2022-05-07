@@ -1,7 +1,7 @@
-package hr.tvz.osrecki.hardwareapp.repository;
+package hr.tvz.osrecki.hardwareapp.hardware.repository;
 
-import hr.tvz.osrecki.hardwareapp.model.Hardware;
-import hr.tvz.osrecki.hardwareapp.model.HardwareType;
+import hr.tvz.osrecki.hardwareapp.hardware.model.Hardware;
+import hr.tvz.osrecki.hardwareapp.hardware.model.HardwareType;
 import org.springframework.context.annotation.Primary;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -17,7 +17,7 @@ import java.util.*;
 @Repository
 public class HardwareRepositoryImpl implements HardwareRepository {
 
-    private static final String SELECT_ALL = "SELECT id, code, name, price, type, availableCount FROM hardware ";
+    private static final String SELECT_ALL = "SELECT id, code, name, price, type, quantity FROM hardware ";
 
     private final JdbcTemplate jdbc;
     private final SimpleJdbcInsert inserter;
@@ -72,15 +72,9 @@ public class HardwareRepositoryImpl implements HardwareRepository {
 
     @Override
     public Optional<Hardware> update(String code, Hardware hardware) {
-        String sql = "UPDATE hardware SET " +
-                "code = ?, " +
-                "name = ?, " +
-                "price = ?, " +
-                "type = ?, " +
-                "availableCount = ? " +
-                "WHERE code = ?";
+        String sql = "UPDATE hardware SET " + "code = ?, " + "name = ?, " + "price = ?, " + "type = ?, " + "quantity = ? " + "WHERE code = ?";
 
-        int executed = jdbc.update(sql, hardware.getCode(), hardware.getName(), hardware.getPrice(), hardware.getType().toString(), hardware.getAvailableCount(), code);
+        int executed = jdbc.update(sql, hardware.getCode(), hardware.getName(), hardware.getPrice(), hardware.getType().toString(), hardware.getQuantity(), code);
 
         System.out.println(executed);
 
@@ -103,20 +97,12 @@ public class HardwareRepositoryImpl implements HardwareRepository {
         values.put("name", hardware.getName());
         values.put("price", hardware.getPrice());
         values.put("type", hardware.getType().toString());
-        values.put("availableCount", hardware.getAvailableCount());
+        values.put("quantity", hardware.getQuantity());
 
         return inserter.executeAndReturnKey(values).longValue();
     }
 
     private Hardware mapRowToHardware(ResultSet rs, int rowNum) throws SQLException {
-        System.out.println(rs);
-        return new Hardware(
-                rs.getLong("id"),
-                rs.getString("code"),
-                rs.getString("name"),
-                rs.getDouble("price"),
-                HardwareType.valueOf(rs.getString("type")),
-                rs.getInt("availableCount")
-        );
+        return new Hardware(rs.getLong("id"), rs.getString("code"), rs.getString("name"), rs.getDouble("price"), HardwareType.valueOf(rs.getString("type")), rs.getInt("quantity"));
     }
 }
