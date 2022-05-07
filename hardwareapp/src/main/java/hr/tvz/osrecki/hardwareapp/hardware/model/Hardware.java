@@ -1,13 +1,11 @@
 package hr.tvz.osrecki.hardwareapp.hardware.model;
 
-import hr.tvz.osrecki.hardwareapp.review.model.Review;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
@@ -30,9 +28,6 @@ public class Hardware {
     private HardwareType type;
 
     private Integer quantity;
-
-    @OneToMany(mappedBy = "hardware", fetch = FetchType.EAGER)
-    private List<Review> reviews;
 
     public Hardware(Long id, String code, String name, Double price, HardwareType type, Integer quantity) {
         this.id = id;

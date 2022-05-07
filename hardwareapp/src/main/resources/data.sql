@@ -20,7 +20,7 @@ VALUES ('BX8071512700K', 'Intel Core i7-12700K', 384.98, 'CPU', 14),
        ('N82E16813119504', 'ASUS ROG Maximus Z690 Hero', 599.99, 'MBO', 5);
 
 INSERT INTO review (title, text, rating, hardware_id)
-VALUES ('Great product', 'I love this product', 5, 1);
---        ('Bad product', 'I hate this product', 1, 2),
---        ('Good product', 'I like this product', 4, 3),
---        ('Great product', 'I love this product', 5, 4),
+VALUES ('Great product', 'I love this product', 5, 3),
+       ('Bad product', 'I hate this product', 1, 2),
+       ('Good product', 'I like this product', 4, 3),
+       ('Great product', 'I love this product', 5, 4);

@@ -25,6 +25,6 @@ public class Review {
 
     private Integer rating;
 
-    @ManyToOne(targetEntity = Hardware.class)
+    @ManyToOne
     private Hardware hardware;
 }
