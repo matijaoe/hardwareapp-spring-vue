@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useItemDelete } from "@/composables/hardware/use-item-delete";
 import { useItemFetch } from "@/composables/hardware/use-item-fetch";
+import { useHardwareReviews } from "@/composables/reviews/use-review";
 import { PhX } from "phosphor-vue";
 
 const router = useRouter();
@@ -20,9 +21,12 @@ const deleteItemHandler = async () => {
   }
 };
 
+const { loading: reviewsLoading, reviews, fetchReviews } = useHardwareReviews();
+
 watchEffect(async () => {
   if (route.params.code) {
-    await fetchItem(route.params.code as string);
+    const code = route.params.code as string;
+    await Promise.all([fetchItem(code), fetchReviews(code)]);
   }
 });
 </script>
@@ -65,6 +69,10 @@ watchEffect(async () => {
           <n-button @click="gotoHardware">Find something else</n-button>
         </template>
       </n-result>
+    </div>
+    <div v-if="reviewsLoading">Reviews Loading...</div>
+    <div>
+      {{ reviews }}
     </div>
   </div>
 </template>
