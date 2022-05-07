@@ -51,6 +51,7 @@ public class HardwareServiceImpl implements HardwareService {
     }
 
     private Hardware mapCommandToHardware(final HardwareCommand command) {
-        return Hardware.builder().code(command.getCode()).name(command.getName()).price(command.getPrice()).type(command.getType()).quantity(command.getQuantity()).build();
+        return new Hardware(command.getCode(), command.getName(), command.getPrice(), command.getType(), command.getQuantity());
     }
+
 }
