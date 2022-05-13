@@ -17,12 +17,23 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public List<ReviewDTO> findAll() {
-        return reviewRepository.findReviewsBy().stream().map(this::mapReviewToDTO).collect(Collectors.toList());
+        return reviewRepository.findAll().stream().map(this::mapReviewToDTO).collect(Collectors.toList());
     }
 
     @Override
     public List<ReviewDTO> findByHardwareCode(String code) {
         return reviewRepository.findAllByHardware_Code(code).stream().map(this::mapReviewToDTO).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<ReviewDTO> findByTitle(String title) {
+        return reviewRepository.findByTitleIsContainingIgnoreCase(title).stream().map(this::mapReviewToDTO).collect(Collectors.toList());
+    }
+
+
+    @Override
+    public ReviewDTO findDistinctById(Long id) {
+        return mapReviewToDTO(reviewRepository.findDistinctById(id));
     }
 
     private ReviewDTO mapReviewToDTO(final Review review) {

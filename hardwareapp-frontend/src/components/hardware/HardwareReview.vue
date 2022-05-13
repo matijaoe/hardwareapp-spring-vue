@@ -29,5 +29,3 @@ const iconWeight = (rating: number, n: number) => {
     </n-thing>
   </n-list-item>
 </template>
-
-<style lang="scss" scoped></style>

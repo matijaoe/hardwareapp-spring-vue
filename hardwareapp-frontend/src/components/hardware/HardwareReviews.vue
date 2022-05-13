@@ -36,5 +36,3 @@ const hasReviews = computed(() => props.reviews?.length > 0);
     </p>
   </n-alert>
 </template>
-
-<style lang="scss" scoped></style>
