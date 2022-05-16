@@ -1,0 +1,19 @@
+<div *ngIf="hardware">
+  <h2>Detalji o {{hardware.name}}</h2>
+  <div><span>Cijena: </span>{{hardware.price}} EUR</div>
+  <div *ngIf="hardware.price > 1000">Ovaj hardver se može kupiti na 6 rata.</div>
+
+  <div *ngIf="reviews != null && reviews.length > 0" >
+    <h3>Recenzije za ovaj hardver:</h3>
+    <ul>
+      <li *ngFor="let review of reviews">
+        {{review.title}} - {{review.rating}}/5
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="reviews != null && reviews.length === 0" >
+    <h3>Trenutno nema recenzija za ovaj hardver</h3>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+</div>
