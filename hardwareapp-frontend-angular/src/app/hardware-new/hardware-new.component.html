@@ -32,7 +32,7 @@
   <div>
     <label>Broj komada na stanju:
       <div>
-        <input type="number" #stock />
+        <input type="number" #quantity />
       </div>
     </label>
   </div>
@@ -44,7 +44,7 @@
     </label>
   </div>
 
-  <button (click)="add(code.value, name.value, type.value, +stock.value, +price.value); code.value=''; name.value=''; type.value='CPU'; stock.value=''; price.value=''">
+  <button (click)="add(code.value, name.value, type.value, +quantity.value, +price.value); code.value=''; name.value=''; type.value='CPU'; quantity.value=''; price.value=''">
     Unesi hardver
   </button>
 

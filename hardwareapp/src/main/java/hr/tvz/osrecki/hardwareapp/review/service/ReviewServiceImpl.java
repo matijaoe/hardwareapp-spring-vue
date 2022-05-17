@@ -17,7 +17,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public List<ReviewDTO> findAll() {
-        return reviewRepository.findReviewsBy().stream().map(this::mapReviewToDTO).collect(Collectors.toList());
+        return reviewRepository.findAll().stream().map(this::mapReviewToDTO).collect(Collectors.toList());
     }
 
     @Override

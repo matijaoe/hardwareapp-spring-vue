@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Hardware} from "../hardware";
-import {HardwareService} from "../hardware.service";
-import {Router} from "@angular/router";
-import {AuthenticationService} from "../security/authentication.service";
+import { Hardware } from '../hardware';
+import { HardwareService } from '../hardware.service';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../security/authentication.service';
 
 @Component({
   selector: 'app-hardwares',
   templateUrl: './hardwares.component.html',
-  styleUrls: ['./hardwares.component.css']
+  styleUrls: ['./hardwares.component.css'],
 })
 export class HardwaresComponent implements OnInit {
-
   hardwares?: Hardware[];
   isUserAdmin: boolean;
 
@@ -27,11 +26,18 @@ export class HardwaresComponent implements OnInit {
   }
 
   getHardwares(): void {
-    this.hardwareService.getHardwares()
-      .subscribe(hardwares => this.hardwares = hardwares);
+    this.hardwareService
+      .getHardwares()
+      .subscribe((hardwares) => (this.hardwares = hardwares));
   }
 
-  add(code: string, name: string, type: string, stock: number, price: number): void {
+  add(
+    code: string,
+    name: string,
+    type: string,
+    quantity: number,
+    price: number
+  ): void {
     code = code.trim();
     name = name.trim();
     type = type.trim();
@@ -39,22 +45,22 @@ export class HardwaresComponent implements OnInit {
       return;
     }
 
-    this.hardwareService.addHardware({code, name, type, stock, price} as Hardware)
-      .subscribe(
-        hardware => {
-          this.hardwares?.push(hardware);
-        }
-      );
+    this.hardwareService
+      .addHardware({ code, name, type, quantity, price } as Hardware)
+      .subscribe((hardware) => {
+        this.hardwares?.push(hardware);
+      });
   }
 
   delete(hardware: Hardware): void {
-    this.hardwareService.deleteHardware(hardware).subscribe(
-      () => this.hardwares = this.hardwares?.filter(h => h !== hardware)
-    );
+    this.hardwareService
+      .deleteHardware(hardware)
+      .subscribe(
+        () => (this.hardwares = this.hardwares?.filter((h) => h !== hardware))
+      );
   }
 
   newHardware() {
     this.router.navigate(['/new-hardware']).then();
   }
-
 }
