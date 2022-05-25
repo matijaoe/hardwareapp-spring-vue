@@ -38,14 +38,19 @@ VALUES ('Pure intel trash', 'Intel be as intel does', 2, 1),
        ('Awesome', 'Thats it. Thats the review.', 5, 9),
        ('Groovy product', 'I do be grooving with this product', 4, 10),
        ('Aight', 'Certified hood classic ', 5, 10);
-       
+
 
 INSERT INTO user(id, username, password)
-VALUES (1, 'user', '$2a$12$h0HcS2QDb/7zPASbLa2GoOTSRP6CWK0oX7pCK.dPjkM6L5N4pNovi'), -- password = user
-       (2, 'admin', '$2a$12$INo0nbj40sQrTB7b28KJput/bNltGmFyCfRsUhvy73qcXo5/XdsTG'); -- password = admin
+VALUES (1, 'user', '$2a$12$h0HcS2QDb/7zPASbLa2GoOTSRP6CWK0oX7pCK.dPjkM6L5N4pNovi'),  -- password = user
+       (2, 'admin', '$2a$12$INo0nbj40sQrTB7b28KJput/bNltGmFyCfRsUhvy73qcXo5/XdsTG'), -- password = admin
+       (3, 'matija', '$2a$12$INo0nbj40sQrTB7b28KJput/bNltGmFyCfRsUhvy73qcXo5/XdsTG'); -- password = admin
+
 INSERT INTO authority (id, authority_name)
 VALUES (1, 'ROLE_ADMIN'),
-       (2, 'ROLE_USER');
+       (2, 'ROLE_USER'),
+       (3, 'ROLE_DELETER');
+
 INSERT INTO user_authority (user_id, authority_id)
 VALUES (1, 2),
-       (2, 1);
+       (2, 1),
+       (3, 3);

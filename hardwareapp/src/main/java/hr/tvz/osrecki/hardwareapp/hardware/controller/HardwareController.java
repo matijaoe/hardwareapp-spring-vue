@@ -61,7 +61,7 @@ public class HardwareController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{code}")
-    @Secured({"ROLE_ADMIN"})
+    @Secured({"ROLE_ADMIN", "ROLE_DELETER"})
     public void delete(@PathVariable String code) {
         hardwareService.delete(code);
     }
