@@ -1,43 +1,43 @@
-<h2>Unos Hardvera</h2>
+<h2>{{'hardwareFormForm.title' | translate}}</h2>
 <div>
-  <h3>Unesi novi hardver</h3>
+  <h3>{{'hardwareForm.addNew' | translate}}</h3>
   <div>
-    <label>Šifra:
+    <label>{{'hardwareForm.code' | translate}}
       <div>
         <input #code />
       </div>
     </label>
   </div>
   <div>
-    <label>Naziv:
+    <label>{{'hardwareForm.name' | translate}}
       <div>
         <input #name />
       </div>
     </label>
   </div>
   <div>
-    <label>Tip:
+    <label>{{'hardwareForm.type' | translate}}
       <div>
         <select #type >
           <option value="CPU">CPU</option>
           <option value="GPU">GPU</option>
           <option value="MBO">MBO</option>
           <option value="RAM">RAM</option>
-          <option value="STORAGE">Pohrana podataka</option>
-          <option value="OTHER">Ostalo</option>
+          <option value="STORAGE">{{'hardwareForm.storage' | translate}}</option>
+          <option value="OTHER">{{'hardwareForm.other' | translate}}</option>
         </select>
       </div>
     </label>
   </div>
   <div>
-    <label>Broj komada na stanju:
+    <label>{{'hardwareForm.quantity' | translate}}
       <div>
         <input type="number" #quantity />
       </div>
     </label>
   </div>
   <div>
-    <label>Cijena:
+    <label>{{'hardware.price' | translate}}
       <div>
         <input type="number" #price />
       </div>
@@ -45,8 +45,8 @@
   </div>
 
   <button (click)="add(code.value, name.value, type.value, +quantity.value, +price.value); code.value=''; name.value=''; type.value='CPU'; quantity.value=''; price.value=''">
-    Unesi hardver
+    {{'hardwareForm.addNewButton' | translate}}
   </button>
 
-  <button (click)="goBack()">go back</button>
+  <button (click)="goBack()"> {{'hardware.back' | translate}}</button>
 </div>

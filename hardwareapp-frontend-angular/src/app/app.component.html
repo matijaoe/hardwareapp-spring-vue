@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="w-100 text-end" *ngIf="authenticationService.isUserAuthenticated()">Prijavljeni ste kao
-    <strong>{{authenticationService.getAuthenticatedUserUsername()}}</strong> | <a href="#" (click)="logout()" class="link-primary">Odjava</a>
+  <div class="w-100 text-end" *ngIf="authenticationService.isUserAuthenticated()">{{'navbar.loggedInAs' | translate}}
+    <strong>{{authenticationService.getAuthenticatedUserUsername()}}</strong> | <a href="#" (click)="logout()" class="link-primary">{{'navbar.logout' | translate}}</a>
   </div>
   <div class="m-5">
     <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-<h2>Hardver</h2>
+<h2>{{'hardware.title' | translate}}</h2>
 <ul class="hardwares">
   <li *ngFor="let hardware of hardwares">
     <a routerLink="/detail/{{hardware.code}}">
@@ -11,6 +11,6 @@
 </ul>
 <div>
   <button *ngIf="isUserAdmin" (click)="newHardware()">
-    Unesi novi hardver
+    {{'hardwares.addNew' | translate}}
   </button>
 </div>

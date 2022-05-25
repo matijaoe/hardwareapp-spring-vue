@@ -1,0 +1,53 @@
+{
+  "language": {
+    "croatian": "Croatian",
+    "english": "Englisht"
+  },
+  "navbar": {
+    "username": "Username",
+    "role": "Role",
+    "login": "Login",
+    "logout": "Logout",
+    "loggedInAs": "Signed in as"
+  },
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "loginError": "Unsuccessful login! Check the information and try again.",
+    "usernamePlaceholder": "Type username",
+    "passwordPlaceholder": "Type password"
+  },
+  "hardwares": {
+    "title": "Hardware",
+    "addNew": "Add new hardware"
+  },
+  "hardwareForm": {
+    "title": "Hardware entry",
+    "addNewButton": "Add new hardware",
+    "storage": "Storage",
+    "other": "Other",
+    "code": "Code",
+    "name": "Name",
+    "type": "Type",
+    "quantity": "Available count"
+  },
+  "hardware": {
+    "title": "Hardware",
+    "price": "Price",
+    "detailsAbout": "Details for",
+    "installments": "This hardware can be purchased in 6 installments.",
+    "reviews": "Reviews for this hardware",
+    "noReviewsMsg": "There are currently no reviews for this hardware",
+    "back": "Back"
+  },
+  "forbidden": {
+    "message": "You have no right to access the requested page!",
+    "backMsg": "Back to homepage"
+  },
+  "notFound": {
+    "message": "Page not found",
+    "backMsg": "Back to homepage"
+  }
+}
