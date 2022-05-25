@@ -14,10 +14,18 @@ export class AppComponent {
   constructor(
     public authenticationService: AuthenticationService,
     private router: Router,
-    private translate: TranslateService
+    public translate: TranslateService
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
+  }
+
+  setLang(lang: 'hr' | 'en') {
+    this.translate.use(lang);
+  }
+
+  isActive(lang: 'hr' | 'en') {
+    return this.translate.currentLang === lang;
   }
 
   logout() {
