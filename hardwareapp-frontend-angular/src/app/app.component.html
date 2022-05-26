@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <button (click)="setLang('hr')" [disabled]="isActive('hr')" >{{'language.croatian' | translate}}</button>   
   <button (click)="setLang('en')" [disabled]="isActive('en')" >{{'language.english' | translate}}</button>   
+  <button (click)="setLang('es')" [disabled]="isActive('es')" >{{'language.spanish' | translate}}</button>   
   <p class="w-100 text-end" *ngIf="authenticationService.isUserAuthenticated()">{{'navbar.loggedInAs' | translate}}   
   <strong>{{authenticationService.getAuthenticatedUserUsername()}}</strong> | <a href="#" (click)="logout()" class="link-primary">{{'navbar.logout' | translate}}</a>
   </p>

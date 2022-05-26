@@ -1,0 +1,54 @@
+{
+  "language": {
+    "croatian": "Croata",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "navbar": {
+    "username": "El nombre de usuario",
+    "role": "Rol",
+    "login": "Inicio de sesión",
+    "logout": "Cierre de sesión",
+    "loggedInAs": "Ingresó como"
+  },
+  "login": {
+    "title": "Inicio de sesión",
+    "username": "nombre de usuario",
+    "password": "Contraseña",
+    "loginButton": "Inicio de sesión",
+    "loginError": "¡Inicio de sesión fallido! Comprueba la información e inténtalo de nuevo",
+    "usernamePlaceholder": "Escriba el nombre de usuario",
+    "passwordPlaceholder": "Escriba la contraseña"
+  },
+  "hardwares": {
+    "title": "Hardware",
+    "addNew": "Añadir nuevo hardware"
+  },
+  "hardwareForm": {
+    "title": "Entrada de hardware",
+    "addNewButton": "Añadir nuevo hardware",
+    "storage": "Almacenamiento",
+    "other": "Otros",
+    "code": "Código",
+    "name": "Nombre",
+    "type": "Tipo",
+    "quantity": "Cantidad disponible"
+  },
+  "hardware": {
+    "title": "Hardware",
+    "price": "Precio",
+    "detailsAbout": "DetallesPara",
+    "installments": "Este hardware se puede comprar en 6 cuotas",
+    "reviews": "Reseñas para este hardware",
+    "noReviewsMsg": "Actualmente no hay reseñas para este hardware",
+    "back": "Volver"
+  },
+  "forbidden": {
+    "message": "¡No tiene derecho a acceder a la página solicitada!",
+    "backMsg": "Volver a la página de inicio"
+  },
+  "notFound": {
+    "message": "Página no encontrada",
+    "backMsg": "Volver a la página de inicio"
+  }
+}
