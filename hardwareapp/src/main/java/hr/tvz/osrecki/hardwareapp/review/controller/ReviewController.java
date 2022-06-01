@@ -16,7 +16,6 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-
     @GetMapping
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     public List<ReviewDTO> getAllReviews() {
