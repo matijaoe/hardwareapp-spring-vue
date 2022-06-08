@@ -13,4 +13,6 @@ public class HardwareDTO {
 
     private Double price;
 
+    private Integer quantity;
+
 }
